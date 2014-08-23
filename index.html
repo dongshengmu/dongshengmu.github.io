@@ -1,0 +1,2131 @@
+<html>
+<head>
+<title>Jellyfish test for Daybreak NG-SRX</title>
+<link rel="stylesheet" href="jellyfish_style.css" type="text/css">
+<script language="JavaScript" src="jellyfish_style.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Jellyfish test for Daybreak NG-SRX</h1><br>
+
+<span class=button onClick="hide_all('tst')">Shrink All</span>
+<span class=button onClick="show_all('tst')" autofocus="autofocus">Expand All</span>
+<span class=button onClick="show_passed('tst')">Expand Passed</span>
+<span class=button onClick="show_failed('tst')">Expand Failed</span>
+<p>
+<em>Tested @ ngsrx-build07, at 2014-04-01T22:11:23, time elapsed 72.825s (execution 0.320s).<br>Design test cases with <a font-style:bold>jellyfish -i</a>, or at <a href="http://localhost:5000/">jellyfish_web</a>.<br></em>
+<p>PASSED=9 FAILED=2<p>
+
+<span class=buttonpassed onClick="goto_id('tst0l')">000</span>
+<span class=buttonpassed onClick="goto_id('tst1l')">001</span>
+<span class=buttonpassed onClick="goto_id('tst2l')">002</span>
+<span class=buttonpassed onClick="goto_id('tst3l')">003</span>
+<span class=buttonpassed onClick="goto_id('tst4l')">004</span>
+<span class=buttonpassed onClick="goto_id('tst5l')">005</span>
+<span class=buttonpassed onClick="goto_id('tst6l')">006</span>
+<span class=buttonpassed onClick="goto_id('tst7l')">007</span>
+<span class=buttonfailed onClick="goto_id('tst8l')">008</span>
+<span class=buttonfailed onClick="goto_id('tst9l')">009</span>
+<span class=buttonpassed onClick="goto_id('tst10l')">010</span>
+
+
+<h1>A Hello World demo of Jellyfish</h1><em>Test suite file [<a href="hello_world.jfut">hello_world.jfut</a>].</em><br><br><h2>jellyfish tutorial with Hello World</h2>
+
+<ul>
+<li class=passed id="tst0l">
+
+<span id="tst0+" class="buttonpassed" onClick="show('tst0')" style="POSITION: absolute; VISIBILITY: hidden;">+000+</span>
+<span id="tst0-" class="buttonpassed" onClick="hide('tst0')">-000-</span>
+hello world, the plain vanilla
+<span class="comment passed" id="tst0" ><br>This is a Hello World demo test case.
+<span class="normal">(time elapse 0.001s, execution 0.0s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE hello world, the plain vanilla</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: This is a Hello World demo test case.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold"># this line is a comment</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>print('Hello World')
+Hello World
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>assert 1 == 1, 'use assert to check result in the middle of test'
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>True        # the evaluation result of last line is the test result
+True
+</pre></span>
+<li class=passed id="tst1l">
+
+<span id="tst1+" class="buttonpassed" onClick="show('tst1')" style="POSITION: absolute; VISIBILITY: hidden;">+001+</span>
+<span id="tst1-" class="buttonpassed" onClick="hide('tst1')">-001-</span>
+a little spicy, devices
+<span class="comment passed" id="tst1" ><br>
+<span class="normal">(time elapse 3.127s, execution 0.02s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE a little spicy, devices</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>devvm('echo "Hello World"')
+<span style="color: darkcyan; font-weight: bold">Starting interactive-process bash@ngsrx-build07: bash -c csh
+</span><span style="color: darkcyan; font-weight: bold">echo "Hello World"
+</span><span style="color: darkmagenta; font-weight: bold">echo "Hello World"
+Hello World
+root@ngsrx-build07 /volume/junosv-storage02/dmu/ngb/build/jellyfish&gt; </span><span style="color: darkmagenta; font-weight: bold">
+</span><span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>ws1('echo "Hello World"')
+<span style="color: darkcyan; font-weight: bold">Starting interactive-process WS1-ngsrx-build18: sudo vzctl enter 1
+</span><span style="color: darkcyan; font-weight: bold">echo "Hello World"
+</span>echo "Hello World"
+Hello World
+]0;root@WS1-ngsrx-build18:/[root@WS1-ngsrx-build18 /]#
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>o, e = vre.shell('echo "Hello World."')
+<span style="color: darkcyan; font-weight: bold">Starting interactive-process vre: telnet vre
+</span><span style="color: darkcyan; font-weight: bold">echo "Hello World."
+</span><span style="color: blue; font-weight: bold">e</span><span style="color: blue; font-weight: bold">cho "Hello World."
+
+Hello World.
+root@vre% </span><span style="color: blue; font-weight: bold">
+</span><span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>'Hello World.' in o and not e
+True
+</pre></span>
+<li class=passed id="tst2l">
+
+<span id="tst2+" class="buttonpassed" onClick="show('tst2')" style="POSITION: absolute; VISIBILITY: hidden;">+002+</span>
+<span id="tst2-" class="buttonpassed" onClick="hide('tst2')">-002-</span>
+a little spicier, packet
+<span class="comment passed" id="tst2" ><br>Craft and send a packet, then sniff and show the received packet.
+<span class="normal">(time elapse 0.284s, execution 0.01s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE a little spicier, packet</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: Craft and send a packet, then sniff and show the received packet.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>pkt = Ether(dst=ws2.dp_mac)/IP(dst=ws2.dp_ip)/ICMP()/Raw(load='Hello World!')  # craft a packet
+<span style="color: darkcyan; font-weight: bold">Starting interactive-process WS2-ngsrx-build18: sudo vzctl enter 2
+</span><span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>res = jfapi.sniffer(iface=ws2.dp_switch, filter='icmp and host %s' % ws2.dp_ip, count=1)   # sniffing on ws2 side
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>suscapy.sendp(pkt, iface=ws1.dp_switch)     # sending from ws1 side
+
+Sent 1 packets.
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>res[0].show()       # show the first received packet, (note, the backend handles result polling)
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">Ethernet</span> </span>]###</span>
+  <span style="color: blue; font-weight: bold">dst</span>=</span> <span style="color: darkmagenta; font-weight: bold">00:18:51:3c:7d:64</span>
+  <span style="color: blue; font-weight: bold">src</span>=</span> <span style="color: darkmagenta; font-weight: bold">ce:98:d4:66:a6:23</span>
+  <span style="color: blue; font-weight: bold">type</span>=</span> <span style="color: darkmagenta; font-weight: bold">IPv4</span>
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">IP</span> </span>]###</span>
+     <span style="color: blue; font-weight: bold">version</span>=</span> <span style="color: darkmagenta; font-weight: bold">4L</span>
+     <span style="color: blue; font-weight: bold">ihl</span>=</span> <span style="color: darkmagenta; font-weight: bold">5L</span>
+     <span style="color: blue; font-weight: bold">tos</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x0</span>
+     <span style="color: blue; font-weight: bold">len</span>=</span> <span style="color: darkmagenta; font-weight: bold">40</span>
+     <span style="color: blue; font-weight: bold">id</span>=</span> <span style="color: darkmagenta; font-weight: bold">1</span>
+     <span style="color: blue; font-weight: bold">flags</span>=</span> <span style="color: darkmagenta; font-weight: bold"></span>
+     <span style="color: blue; font-weight: bold">frag</span>=</span> <span style="color: darkmagenta; font-weight: bold">0L</span>
+     <span style="color: blue; font-weight: bold">ttl</span>=</span> <span style="color: darkmagenta; font-weight: bold">63</span>
+     <span style="color: blue; font-weight: bold">proto</span>=</span> <span style="color: darkmagenta; font-weight: bold">icmp</span>
+     <span style="color: blue; font-weight: bold">chksum</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x5cb6</span>
+     <span style="color: blue; font-weight: bold"><span style="font-weight: bold">src</span>=</span> <span style="color: darkmagenta; font-weight: bold"><span style="font-weight: bold">10.150.16.133</span>
+     <span style="color: blue; font-weight: bold"><span style="font-weight: bold">dst</span>=</span> <span style="color: darkmagenta; font-weight: bold"><span style="font-weight: bold">2.2.2.2</span>
+     \<span style="color: blue; font-weight: bold">options</span>\
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">ICMP</span> </span>]###</span>
+        <span style="color: blue; font-weight: bold">type</span>=</span> <span style="color: darkmagenta; font-weight: bold">echo-request</span>
+        <span style="color: blue; font-weight: bold">code</span>=</span> <span style="color: darkmagenta; font-weight: bold">0</span>
+        <span style="color: blue; font-weight: bold">chksum</span>=</span> <span style="color: darkmagenta; font-weight: bold">0xa610</span>
+        <span style="color: blue; font-weight: bold">id</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x0</span>
+        <span style="color: blue; font-weight: bold">seq</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x0</span>
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">Raw</span> </span>]###</span>
+           <span style="color: blue; font-weight: bold">load</span>=</span> <span style="color: darkmagenta; font-weight: bold">'Hello World!'</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>suscapy.ls(res[0])  # show the protocol layers
+dst        : DestMACField         = '00:18:51:3c:7d:64' (None)
+src        : SourceMACField       = 'ce:98:d4:66:a6:23' (None)
+type       : XShortEnumField      = 2048            (0)
+--
+version    : BitField             = 4L              (4)
+ihl        : BitField             = 5L              (None)
+tos        : XByteField           = 0               (0)
+len        : ShortField           = 40              (None)
+id         : ShortField           = 1               (1)
+flags      : FlagsField           = 0L              (0)
+frag       : BitField             = 0L              (0)
+ttl        : ByteField            = 63              (64)
+proto      : ByteEnumField        = 1               (0)
+chksum     : XShortField          = 23734           (None)
+src        : Emph                 = '10.150.16.133' (None)
+dst        : Emph                 = '2.2.2.2'       ('127.0.0.1')
+options    : PacketListField      = []              ([])
+--
+type       : ByteEnumField        = 8               (8)
+code       : MultiEnumField       = 0               (0)
+chksum     : XShortField          = 42512           (None)
+id         : ConditionalField     = 0               (0)
+seq        : ConditionalField     = 0               (0)
+ts_ori     : ConditionalField     = None            (18683150)
+ts_rx      : ConditionalField     = None            (18683150)
+ts_tx      : ConditionalField     = None            (18683150)
+gw         : ConditionalField     = None            ('0.0.0.0')
+ptr        : ConditionalField     = None            (0)
+reserved   : ConditionalField     = None            (0)
+addr_mask  : ConditionalField     = None            ('0.0.0.0')
+unused     : ConditionalField     = None            (0)
+--
+load       : StrField             = 'Hello World!'  ('')
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>'Hello World!' == res[0][Raw].load  # checking result, (note, a particular layer/field can be direct accessed)
+True
+</pre></span>
+<li class=passed id="tst3l">
+
+<span id="tst3+" class="buttonpassed" onClick="show('tst3')" style="POSITION: absolute; VISIBILITY: hidden;">+003+</span>
+<span id="tst3-" class="buttonpassed" onClick="hide('tst3')">-003-</span>
+a little more spicier, gdb
+<span class="comment passed" id="tst3" ><br>A sample gdb test to check some global data in the target program.
+<span class="normal">(time elapse 3.292s, execution 0.03s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE a little more spicier, gdb</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: A sample gdb test to check some global data in the target program.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>o, e = gdbflowd.cmd_in_context('p system_banner_long')
+
+<span style="color: white; background-color: blue; font-weight: bold">=== Starting GDB for "/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd"</span>
+<span style="color: darkcyan; font-weight: bold">Starting interactive-process gdb /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd 195639: gdb
+</span><span style="color: darkcyan; font-weight: bold">file /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd
+</span>file /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd
+Reading symbols from /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd...done.
+(gdb) ^C(gdb) <span style="color: green; font-weight: bold">GDB attached to /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+<span style="color: darkcyan; font-weight: bold">p system_banner_long
+</span>p system_banner_long
+$1 = 0x17738e0 "====== NGSRX System ======"
+(gdb)
+^C(gdb) <span style="color: green; font-weight: bold">GDB detached from /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>gdbflowd.context(macros='$SRXSRC/build/jellyfish/gdb_macros_flowd')
+<span style="color: darkcyan; font-weight: bold">source /volume/junosv-storage02/dmu/ngb/build/jellyfish/gdb_macros_flowd
+</span>source /volume/junosv-storage02/dmu/ngb/build/jellyfish/gdb_macros_flowd
+(gdb) &lt;pygdb.gdbflowd_session object at 0x2f72e90&gt;
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>o1, e1 = gdbflowd.cmd_in_context('dump_module_list module_node_application_table')
+<span style="color: green; font-weight: bold">GDB attached to /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+<span style="color: darkcyan; font-weight: bold">dump_module_list module_node_application_table
+</span>dump_module_list module_node_application_table
+$2 = {
+  magic = 0x48746162,
+  offset = 0x0,
+  head = 0x39008ac8,
+  tail = 0x39009fc8,
+  item_count = 0x28,
+  name = 0x1774e00 "Module application"
+}
+Module application has 40 modules:
+  flowd_avt		$3 = (module_entry_t) 0x634c88 &lt;avt_module_init&gt;
+  flowd_gate		$4 = (module_entry_t) 0x63b006 &lt;gate_init&gt;
+  flowd_session		$5 = (module_entry_t) 0x64a1f8 &lt;session_module_init&gt;
+  flowd_flow		$6 = (module_entry_t) 0x61b872 &lt;flow_module_init&gt;
+  flow_vector_sm_init		$7 = (module_entry_t) 0x632f70 &lt;flow_vector_sm_init0&gt;
+  heap_data		$8 = (module_entry_t) 0x6c9a8a &lt;heap_data_init&gt;
+  if_flowd_aus		$9 = (module_entry_t) 0x95d2d6 &lt;ifrt_module_init&gt;
+  usp_if_localaddr_mt		$10 = (module_entry_t) 0xa3c999 &lt;usp_if_localaddr_module_init&gt;
+  usp_ipc_mt		$11 = (module_entry_t) 0xa3f0d9 &lt;usp_ipc_module_init&gt;
+  gencfg		$12 = (module_entry_t) 0xa3f161 &lt;gencfg_cfg_module_init&gt;
+  flowd_usp_sctp_mt		$13 = (module_entry_t) 0xa47bb7 &lt;sctp_module_init&gt;
+  flowd_usp_lsys_mt		$14 = (module_entry_t) 0xa55afe &lt;lsys_module_init&gt;
+  flowd_usp_l2flow_mt		$15 = (module_entry_t) 0xa5c670 &lt;l2flow_module_init&gt;
+  app_def		$16 = (module_entry_t) 0xa6e712 &lt;app_def_init&gt;
+  flowd_usp_algs_mt		$17 = (module_entry_t) 0xa8170b &lt;algs_module_init&gt;
+  flowd_usp_fwauth_mt		$18 = (module_entry_t) 0xac0162 &lt;fwauth_module_init&gt;
+  flowd_usp_nat_mt		$19 = (module_entry_t) 0xb03de8 &lt;nat_init&gt;
+  flowd_usp_policy_mt		$20 = (module_entry_t) 0xba6030 &lt;policy_module_init&gt;
+  flowd_util_ctrl		$21 = (module_entry_t) 0xbc9970 &lt;util_app_module_init&gt;
+  flowd_usp_host_mt		$22 = (module_entry_t) 0xbca7e7 &lt;host_module_init&gt;
+  flowd_usp_resmgr_mt		$23 = (module_entry_t) 0xbd6f67 &lt;rm_module_init&gt;
+  zone_usp_flow_mt		$24 = (module_entry_t) 0xbdd04b &lt;zone_module_init&gt;
+  flowd_usp_ifp_mt		$25 = (module_entry_t) 0xbe45e7 &lt;ifp_init&gt;
+  cosfpc		$26 = (module_entry_t) 0xbe8d72 &lt;cosfpc_init&gt;
+  mlpfe		$27 = (module_entry_t) 0xc1ed80 &lt;mlpfe_init&gt;
+  cos		$28 = (module_entry_t) 0xc33294 &lt;cos_module_init&gt;
+  halp_dfw		$29 = (module_entry_t) 0xc71164 &lt;halp_register_mtj_shim&gt;
+  clns		$30 = (module_entry_t) 0xc86660 &lt;clns_init&gt;
+  halp_rt		$31 = (module_entry_t) 0xc988fd &lt;mtj_rt_init&gt;
+  route_hal		$32 = (module_entry_t) 0xcce63c &lt;rt_init&gt;
+  cmfwdd		$33 = (module_entry_t) 0xcf3c78 &lt;cmfwdd_module_init&gt;
+  ip6		$34 = (module_entry_t) 0xcfe996 &lt;ip6_init&gt;
+  ip		$35 = (module_entry_t) 0xd038e1 &lt;ip_init&gt;
+  mtj_nh		$36 = (module_entry_t) 0xd03b2e &lt;mtj_nh_init&gt;
+  nh-hal		$37 = (module_entry_t) 0xd45a3c &lt;nh_init&gt;
+  cprod		$38 = (module_entry_t) 0xdb0c39 &lt;cprod_module_init&gt;
+  pfeman_flowd		$39 = (module_entry_t) 0xdbc55d &lt;pfeman_flowd_aus_init&gt;
+  vrrpman		$40 = (module_entry_t) 0xdc768a &lt;vrrpman_module_init&gt;
+  vty		$41 = (module_entry_t) 0xdcb594 &lt;vty_init&gt;
+  fast-jmpi		$42 = (module_entry_t) 0xdcefff &lt;fast_jmpi_init&gt;
+
+(gdb)
+^C(gdb) <span style="color: green; font-weight: bold">GDB detached from /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>"====== NGSRX System ======" in o and 'flowd_usp_ifp_mt' in o1
+True
+</pre></span>
+<li class=passed id="tst4l">
+
+<span id="tst4+" class="buttonpassed" onClick="show('tst4')" style="POSITION: absolute; VISIBILITY: hidden;">+004+</span>
+<span id="tst4-" class="buttonpassed" onClick="hide('tst4')">-004-</span>
+a little more spicier, gdb breakpoint
+<span class="comment passed" id="tst4" ><br>A sample gdb test to collect and analyze data from a running process
+<span class="normal">(time elapse 0.210s, execution 0.02s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE a little more spicier, gdb breakpoint</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: A sample gdb test to collect and analyze data from a running process</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>breakpoints = [
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    # a breakpoint can be as simple as this</span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    # dict(location = 'show_version',</span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    #     commands = ['p system_banner_long']),</span>
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    # or can be as flexible as this one</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    dict(location = 'flowd_tap_pkt_rx', # in this function
+<span style="color: darkcyan; font-weight: bold">... </span>        match = '    return pkt_ptr;',  # break at the line with this pattern
+<span style="color: darkcyan; font-weight: bold">... </span>        show_source = True,             # print the source code, so if code refactored, we know it
+<span style="color: darkcyan; font-weight: bold">... </span>        commands = ['bt',               # show back trace
+<span style="color: darkcyan; font-weight: bold">... </span>                    'info local',       # show local variables
+<span style="color: darkcyan; font-weight: bold">... </span>                    'x/100xb pkt_ptr',  # exam mem at return pointer pkt_ptr, print 100 bytes in hex format
+<span style="color: darkcyan; font-weight: bold">... </span>                    'x/1s (char*)pkt_ptr+42', # print 1 string at the payload offset
+<span style="color: darkcyan; font-weight: bold">... </span>                    ],                  # note, jellyfish will add a 'continue' for gdb_bp cmd.
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">        # condition = 'tap_fd == 0xc',    # a condition, breakpoint only hits if the pass-in</span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">                                          # param tap_fd is certain interface</span>
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">        # ignore_count = 5,               # only break for the 6th time hit.</span>
+<span style="color: darkcyan; font-weight: bold">... </span>        temporary = True,               # after stop once, remove this breakpoint
+<span style="color: darkcyan; font-weight: bold">... </span>        auto_continue = False,          # telling gdb don't continue after breakpoint hit,
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">                                        # the test code will explicitly continue the target program</span>
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span>        ),
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span>    ]
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>pkt = Ether(dst=ws2.dp_mac)/IP(dst=ws2.dp_ip)/ICMP()/Raw(load='Hello World!')
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>with gdbflowd.context(breakpoints, macros=[]):
+<span style="color: darkcyan; font-weight: bold">... </span>    suscapy.sendp(pkt, iface=ws1.dp_switch)     # send a packet to trigger the breakpoint
+<span style="color: darkcyan; font-weight: bold">... </span>    o = gdbflowd.getbuf('flowd_tap_pkt_rx')     # get the gdb output of the breakpoint
+<span style="color: darkcyan; font-weight: bold">... </span>    if "Hello World!" not in o:         # check the result
+<span style="color: darkcyan; font-weight: bold">... </span>        gdbflowd.test_failed = True     # mark test failed, so if -e stop-on-error specified,
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">                                        # flowd process will be stopped here for on-spot debugging</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    else:
+<span style="color: darkcyan; font-weight: bold">... </span>        gdbflowd.cont()                 # passed, let flowd continue to run.
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: green; font-weight: bold">
+"flowd_tap_pkt_rx" is at file flowd_tap_if.c, line 96</span>
+<span style="color: green; font-weight: bold">94	</span>
+<span style="color: green; font-weight: bold">95	pkt_ptr_t flowd_tap_pkt_rx(int tap_fd, uint32_t *pkt_len, pktrx_errcode_t *error_code)</span>
+96	{
+97	    int nread, i;
+98	    struct rte_mbuf *m;
+99	    pkt_ptr_t pkt_ptr;
+101	    m = rte_pktmbuf_alloc(hw_mbuf_pool);
+102	    if (m == NULL) {
+103	        printf("No MBUF available\n");
+104	        *error_code = PKTRX_NO_MBUF;
+105	        *pkt_len = 0;
+106	        return NULL;
+107	    }
+108	    pkt_ptr = rte_pktmbuf_mtod(m, pkt_ptr_t);
+109	    while ((nread = read(tap_fd, pkt_ptr, (1 &lt;&lt; FLOWD_DP_HW_PKT_SHIFT))) == -1 && errno == EINTR) {
+110	        ;
+111	    }
+112	    if (nread == -1) {
+113	        printf("Read error, return error code: %d\n", errno);
+114	        *error_code = PKTRX_IOREAD_ERR;
+115	        *pkt_len = 0;
+116	        return NULL;
+117	    }
+118	    *error_code = PKTRX_OK;
+119	    *pkt_len = (uint32_t)nread;
+120	    dbgprintf("receive %d bytes:\n", nread);
+121	    for (i = 0; i &lt; nread; i++) {
+122	        if ( i % 16 == 0 ) {
+123	            dbgprintf("%04x: ", i);
+124	        }
+125	        if (i & 1) {
+126	            dbgprintf("%02x ", (unsigned)(((unsigned char *)pkt_ptr)[i]));
+127	        } else {
+128	            dbgprintf("%02x" , (unsigned)(((unsigned char *)pkt_ptr)[i]));
+129	        }
+130	        if ( i % 16 == 15 ) {
+131	            dbgprintf("\n");
+132	        }
+133	    }
+134	    dbgprintf("\n");
+<span style="color: green; font-weight: bold">135	    return pkt_ptr;</span>
+136	}
+<span style="color: darkcyan; font-weight: bold">tbreak flowd_tap_if.c:135
+</span>tbreak flowd_tap_if.c:135
+Temporary breakpoint 1 at 0xf083c2: file flowd_tap_if.c, line 135.
+(gdb) <span style="color: darkcyan; font-weight: bold">commands
+</span>commands
+&gt;<span style="color: darkcyan; font-weight: bold">bt
+</span>&gt;<span style="color: darkcyan; font-weight: bold">info local
+</span>&gt;<span style="color: darkcyan; font-weight: bold">x/100xb pkt_ptr
+</span>&gt;<span style="color: darkcyan; font-weight: bold">x/1s (char*)pkt_ptr+42
+</span>&gt;<span style="color: darkcyan; font-weight: bold">printf "=== gdbflowd data collecting is completed. ===\n"
+</span>&gt;<span style="color: darkcyan; font-weight: bold">end
+</span>(gdb) <span style="color: darkcyan; font-weight: bold">info break
+</span>info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     del  y   0x0000000000f083c2 in flowd_tap_pkt_rx at flowd_tap_if.c:135
+        bt
+        info local
+        x/100xb pkt_ptr
+        x/1s (char*)pkt_ptr+42
+        printf "=== gdbflowd data collecting is completed. ===\n"
+(gdb) <span style="color: green; font-weight: bold">GDB attached to /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+
+Sent 1 packets.
+[Switching to Thread 0x7f4abd3f2700 (LWP 195651)]
+
+Temporary breakpoint 1, flowd_tap_pkt_rx (tap_fd=0xb, pkt_len=0x7f4abd3f1d38, error_code=0x7f4abd3f1d34) at flowd_tap_if.c:135
+135	    return pkt_ptr;
+#0  flowd_tap_pkt_rx (tap_fd=0xb, pkt_len=0x7f4abd3f1d38, error_code=0x7f4abd3f1d34) at flowd_tap_if.c:135
+#1  0x0000000000413b45 in flowd_pkt_io_rx (ifid=0xb, pkt_len=0x7f4abd3f1d38, error_code=0x7f4abd3f1d34) at flowd_pkt_io.c:124
+#2  0x0000000000f04edc in hwt_spt_func (hwt_id=0x0) at flowd_spt.c:100
+#3  0x0000003729607851 in start_thread () from /lib64/libpthread.so.0
+#4  0x00000037292e894d in clone () from /lib64/libc.so.6
+nread = 0x36
+i = 0x36
+m = 0x7f4ac0541100
+pkt_ptr = 0x7f4ac05414c0
+0x7f4ac05414c0:	0x00	0x18	0x51	0x3c	0x7d	0x64	0x00	0x50
+0x7f4ac05414c8:	0x56	0x94	0x02	0xaf	0x08	0x00	0x45	0x00
+0x7f4ac05414d0:	0x00	0x28	0x00	0x01	0x00	0x00	0x40	0x01
+0x7f4ac05414d8:	0x5b	0xb6	0x0a	0x96	0x10	0x85	0x02	0x02
+0x7f4ac05414e0:	0x02	0x02	0x08	0x00	0xa6	0x10	0x00	0x00
+0x7f4ac05414e8:	0x00	0x00	0x48	0x65	0x6c	0x6c	0x6f	0x20
+0x7f4ac05414f0:	0x57	0x6f	0x72	0x6c	0x64	0x21	0x00	0x00
+0x7f4ac05414f8:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x7f4ac0541500:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x7f4ac0541508:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x7f4ac0541510:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x7f4ac0541518:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x7f4ac0541520:	0x00	0x00	0x00	0x00
+0x7f4ac05414ea:	 "Hello World!"
+=== gdbflowd data collecting is completed. ===
+<span style="color: darkcyan; font-weight: bold">cont
+</span>(gdb) cont
+Continuing.
+(gdb) <span style="color: green; font-weight: bold">GDB detached from /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold"># the hex dump is not clear enough for human read, let's convert the hexdump to packet and show it.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p = jfapi.hex2pkt(o, first_layer=Ether)
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p.show()
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">Ethernet</span> </span>]###</span>
+  <span style="color: blue; font-weight: bold">dst</span>=</span> <span style="color: darkmagenta; font-weight: bold">00:18:51:3c:7d:64</span>
+  <span style="color: blue; font-weight: bold">src</span>=</span> <span style="color: darkmagenta; font-weight: bold">00:50:56:94:02:af</span>
+  <span style="color: blue; font-weight: bold">type</span>=</span> <span style="color: darkmagenta; font-weight: bold">IPv4</span>
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">IP</span> </span>]###</span>
+     <span style="color: blue; font-weight: bold">version</span>=</span> <span style="color: darkmagenta; font-weight: bold">4L</span>
+     <span style="color: blue; font-weight: bold">ihl</span>=</span> <span style="color: darkmagenta; font-weight: bold">5L</span>
+     <span style="color: blue; font-weight: bold">tos</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x0</span>
+     <span style="color: blue; font-weight: bold">len</span>=</span> <span style="color: darkmagenta; font-weight: bold">40</span>
+     <span style="color: blue; font-weight: bold">id</span>=</span> <span style="color: darkmagenta; font-weight: bold">1</span>
+     <span style="color: blue; font-weight: bold">flags</span>=</span> <span style="color: darkmagenta; font-weight: bold"></span>
+     <span style="color: blue; font-weight: bold">frag</span>=</span> <span style="color: darkmagenta; font-weight: bold">0L</span>
+     <span style="color: blue; font-weight: bold">ttl</span>=</span> <span style="color: darkmagenta; font-weight: bold">64</span>
+     <span style="color: blue; font-weight: bold">proto</span>=</span> <span style="color: darkmagenta; font-weight: bold">icmp</span>
+     <span style="color: blue; font-weight: bold">chksum</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x5bb6</span>
+     <span style="color: blue; font-weight: bold"><span style="font-weight: bold">src</span>=</span> <span style="color: darkmagenta; font-weight: bold"><span style="font-weight: bold">10.150.16.133</span>
+     <span style="color: blue; font-weight: bold"><span style="font-weight: bold">dst</span>=</span> <span style="color: darkmagenta; font-weight: bold"><span style="font-weight: bold">2.2.2.2</span>
+     \<span style="color: blue; font-weight: bold">options</span>\
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">ICMP</span> </span>]###</span>
+        <span style="color: blue; font-weight: bold">type</span>=</span> <span style="color: darkmagenta; font-weight: bold">echo-request</span>
+        <span style="color: blue; font-weight: bold">code</span>=</span> <span style="color: darkmagenta; font-weight: bold">0</span>
+        <span style="color: blue; font-weight: bold">chksum</span>=</span> <span style="color: darkmagenta; font-weight: bold">0xa610</span>
+        <span style="color: blue; font-weight: bold">id</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x0</span>
+        <span style="color: blue; font-weight: bold">seq</span>=</span> <span style="color: darkmagenta; font-weight: bold">0x0</span>
+</span>###[</span> <span style="color: red; font-weight: bold"><span style="font-weight: bold">Raw</span> </span>]###</span>
+           <span style="color: blue; font-weight: bold">load</span>=</span> <span style="color: darkmagenta; font-weight: bold">'Hello World!'</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>"Hello World!" in o and p[Raw].load == 'Hello World!'
+True
+</pre></span>
+<li class=passed id="tst5l">
+
+<span id="tst5+" class="buttonpassed" onClick="show('tst5')" style="POSITION: absolute; VISIBILITY: hidden;">+005+</span>
+<span id="tst5-" class="buttonpassed" onClick="hide('tst5')">-005-</span>
+unit testing a function with gdb
+<span class="comment passed" id="tst5" ><br>A sample to unit test a function, by mocking its pass-in parameters and exam return result.
+<span class="normal">(time elapse 12.243s, execution 0.09s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE: unit testing a function with gdb</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: A sample to unit test a function, by mocking its pass-in parameters and exam return result.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>ok = True
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>with gdbflowd.context(stop_target=True):
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('Demostrate unit test for an API function.')
+<span style="color: darkcyan; font-weight: bold">... </span>    g = gdbflowd
+<span style="color: darkcyan; font-weight: bold">... </span>    g.show_source('crc32')                          # print source code of crc32()
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    ### mocking</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    g('set $buf = (unsigned char *)malloc(20)')     # malloc a buffer
+<span style="color: darkcyan; font-weight: bold">... </span>    g('call memset($buf, 0, 20)')                   # clear the buffer
+<span style="color: darkcyan; font-weight: bold">... </span>    g('x/20xb $buf')                                # print hex value in the buffer
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    ### testing</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e = g.cmd('call $result = crc32($buf, 20)')  # compute crc32 for the buf
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    ### checking</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    if e or ' = 0x0\n' not in o:                         # check the return value
+<span style="color: darkcyan; font-weight: bold">... </span>        util.print_fail('crc32 result of all 0 is wrong.')
+<span style="color: darkcyan; font-weight: bold">... </span>        ok = False
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    ### CRC32 for the Hello World!</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('Unit test the crc32() function with a "Hello World!" string.')
+<span style="color: darkcyan; font-weight: bold">... </span>    g('set $hello = "Hello World!"')
+<span style="color: darkcyan; font-weight: bold">... </span>    g('print $hello')
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e = g.cmd('call crc32(&$hello, strlen($hello))')
+<span style="color: darkcyan; font-weight: bold">... </span>    if ' = 0x67fcdacc' not in o:
+<span style="color: darkcyan; font-weight: bold">... </span>        util.print_fail('crc32 result of the "Hello World!" string is wrong.')
+<span style="color: darkcyan; font-weight: bold">... </span>        ok = False
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    ### now test crc32 with a pattern, 20 bytes of 0xAA, and 10 bytes</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('Now test crc32 with a pattern, 20 bytes of 0xAA, and 10 bytes.')
+<span style="color: darkcyan; font-weight: bold">... </span>    g('call memset($buf, 0xAA, 20)')
+<span style="color: darkcyan; font-weight: bold">... </span>    g('x/20xb $buf')
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e = g.cmd('call crc32($buf, 20)')
+<span style="color: darkcyan; font-weight: bold">... </span>    o1, e1 = g.cmd('call crc32($buf, 10)')
+<span style="color: darkcyan; font-weight: bold">... </span>    if e or ' = 0x8b13b3e9\n' not in o or e1 or ' = 0x1646ff3\n' not in o1:
+<span style="color: darkcyan; font-weight: bold">... </span>        util.print_fail('crc32 result is wrong.')
+<span style="color: darkcyan; font-weight: bold">... </span>        ok = False
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    ### Now, some negative tests</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('Now, some negative tests, with wrong parameters, NULL pointer, invalid length etc')
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e = g.cmd('call crc32(0)')           # too few parameters
+<span style="color: darkcyan; font-weight: bold">... </span>    o1, e1 = g.cmd('call crc32(0, 20)')     # NULL pointer, this test will crash flowd, as crc32() doesn't check NULL.
+<span style="color: darkcyan; font-weight: bold">... </span>    o2, e2 = g.cmd('call crc32($buf, 0)')   # 0 length, this should be ok and crc32 should return 0.
+<span style="color: darkcyan; font-weight: bold">... </span>    if not e or not e1 or ' = 0x0\n' not in o2:
+<span style="color: darkcyan; font-weight: bold">... </span>        util.print_fail('function crc32 negative tests failed.')
+<span style="color: darkcyan; font-weight: bold">... </span>        ok = False
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span><span style="color: darkcyan; font-weight: bold">    ### clean up</span>
+<span style="color: darkcyan; font-weight: bold">... </span>    g('call free($buf)')
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: green; font-weight: bold">GDB attached to /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+<span style="color: green; font-weight: bold">Demostrate unit test for an API function.</span>
+<span style="color: green; font-weight: bold">
+"crc32" is at file /host/svl-junos-d013/b/dmu/ngbx46_2/src/pfe/common/toolkits/util/crc32.c, line 132</span>
+<span style="color: green; font-weight: bold">130	unsigned int </span>
+<span style="color: green; font-weight: bold">131	crc32(const unsigned char *s, unsigned int len)</span>
+132	{
+133	    return(inc_crc32(s, len, 0));
+134	}
+<span style="color: darkcyan; font-weight: bold">set $buf = (unsigned char *)malloc(20)
+</span>set $buf = (unsigned char *)malloc(20)
+(gdb)
+<span style="color: darkcyan; font-weight: bold">call memset($buf, 0, 20)
+</span>call memset($buf, 0, 20)
+$43 = 0x3c916b0
+(gdb)
+<span style="color: darkcyan; font-weight: bold">x/20xb $buf
+</span>x/20xb $buf
+0x3c916b0:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x3c916b8:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0x3c916c0:	0x00	0x00	0x00	0x00
+(gdb)
+<span style="color: darkcyan; font-weight: bold">call $result = crc32($buf, 20)
+</span>call $result = crc32($buf, 20)
+$44 = 0x0
+(gdb)
+<span style="color: green; font-weight: bold">Unit test the crc32() function with a "Hello World!" string.</span>
+<span style="color: darkcyan; font-weight: bold">set $hello = "Hello World!"
+</span>set $hello = "Hello World!"
+(gdb)
+<span style="color: darkcyan; font-weight: bold">print $hello
+</span>print $hello
+$45 = "Hello World!"
+(gdb)
+<span style="color: darkcyan; font-weight: bold">call crc32(&$hello, strlen($hello))
+</span>call crc32(&$hello, strlen($hello))
+$46 = 0x67fcdacc
+(gdb)
+<span style="color: green; font-weight: bold">Now test crc32 with a pattern, 20 bytes of 0xAA, and 10 bytes.</span>
+<span style="color: darkcyan; font-weight: bold">call memset($buf, 0xAA, 20)
+</span>call memset($buf, 0xAA, 20)
+$47 = 0x3c916b0
+(gdb)
+<span style="color: darkcyan; font-weight: bold">x/20xb $buf
+</span>x/20xb $buf
+0x3c916b0:	0xaa	0xaa	0xaa	0xaa	0xaa	0xaa	0xaa	0xaa
+0x3c916b8:	0xaa	0xaa	0xaa	0xaa	0xaa	0xaa	0xaa	0xaa
+0x3c916c0:	0xaa	0xaa	0xaa	0xaa
+(gdb)
+<span style="color: darkcyan; font-weight: bold">call crc32($buf, 20)
+</span>call crc32($buf, 20)
+$48 = 0x8b13b3e9
+(gdb)
+<span style="color: darkcyan; font-weight: bold">call crc32($buf, 10)
+</span>call crc32($buf, 10)
+$49 = 0x1646ff3
+(gdb)
+<span style="color: green; font-weight: bold">Now, some negative tests, with wrong parameters, NULL pointer, invalid length etc</span>
+<span style="color: darkcyan; font-weight: bold">call crc32(0)
+</span>call crc32(0)
+<span style="color: darkmagenta; font-weight: bold">Too few arguments in function call.</span><span style="color: darkmagenta; font-weight: bold">
+</span>(gdb)
+<span style="color: darkcyan; font-weight: bold">call crc32(0, 20)
+</span>call crc32(0, 20)
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000e666e3 in inc_crc32 (s=0x0, len=0x14, crc32val=0x0) at /host/svl-junos-d013/b/dmu/ngbx46_2/src/pfe/common/toolkits/util/crc32.c:123
+123	        crc32val = crc32_tab[(crc32val ^ s[i]) & 0xff] ^ (crc32val &gt;&gt; 8);
+<span style="color: darkmagenta; font-weight: bold">The program being debugged was signaled while in a function called from GDB.
+GDB remains in the frame where the signal was received.
+To change this behavior use "set unwindonsignal on".
+Evaluation of the expression containing the function
+(crc32) will be abandoned.
+When the function is done executing, GDB will silently stop.
+</span>(gdb)
+<span style="color: darkcyan; font-weight: bold">call crc32($buf, 0)
+</span>call crc32($buf, 0)
+$50 = 0x0
+(gdb)
+<span style="color: darkcyan; font-weight: bold">call free($buf)
+</span>call free($buf)
+$51 = 0x0
+(gdb)
+^C(gdb) <span style="color: green; font-weight: bold">GDB detached from /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 195639</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold"># as the NULL pointer test crashes flowd, let's restart flowd</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>flowd.restart_target(wait_online=True)
+<span style="color: green; font-weight: bold">No flowd process running, start "/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd -M 2", pid 196316</span>
+<span style="color: darkcyan; font-weight: bold">Starting interactive-process flowd: telnet 128.0.0.2 6023
+</span><span style="color: darkcyan; font-weight: bold">Will retry "telnet 128.0.0.2 6023" in 1 sec...
+</span><span style="color: darkcyan; font-weight: bold">Will retry "telnet 128.0.0.2 6023" in 1 sec...
+</span><span style="color: olive; font-weight: bold">[Tue Apr  1 22:11:33 2014 LOG: Info] Send policy sync request to RE from PFE 0x2.
+</span><span style="color: olive; font-weight: bold">[Tue Apr  1 22:11:33 2014 LOG: Info] Policies in RE are being synced to PFE 0x2.
+</span><span style="color: olive; font-weight: bold">[Tue Apr  1 22:11:33 2014 LOG: Info] Policy resync is completed in PFE 0x2.
+</span><span style="color: darkcyan; font-weight: bold">Polling flowd commands for Online state ...
+</span><span style="color: darkcyan; font-weight: bold">cmd_poll: time spent 2.00 seconds, (1 * 2)
+</span><span style="color: darkcyan; font-weight: bold">cmd_poll: time spent 4.00 seconds, (2 * 2)
+</span><span style="color: darkcyan; font-weight: bold">cmd_poll: time spent 6.00 seconds, (3 * 2)
+</span><span style="color: darkcyan; font-weight: bold">cmd_poll: time spent 8.00 seconds, (4 * 2)
+</span><span style="color: darkcyan; font-weight: bold">flowd is Online
+</span><span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold"># checking the test result</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>ok == True
+True
+</pre></span>
+<li class=passed id="tst6l">
+
+<span id="tst6+" class="buttonpassed" onClick="show('tst6')" style="POSITION: absolute; VISIBILITY: hidden;">+006+</span>
+<span id="tst6-" class="buttonpassed" onClick="hide('tst6')">-006-</span>
+a fresh spice, systemtap
+<span class="comment passed" id="tst6" ><br>SystemTap flowd to check the variables and backtrace of a function call triggered by another process.
+<span class="normal">(time elapse 3.768s, execution 0.01s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE a fresh spice, systemtap</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: SystemTap flowd to check the variables and backtrace of a function call triggered by another process.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>probes = [
+<span style="color: darkcyan; font-weight: bold">... </span>    dict(type = 'function',
+<span style="color: darkcyan; font-weight: bold">... </span>         name = 'show_version',
+<span style="color: darkcyan; font-weight: bold">... </span>         script = 'printf("Hello World, from SystemTap!\\n") '
+<span style="color: darkcyan; font-weight: bold">... </span>                  'println($$vars$) '               # print local vars
+<span style="color: darkcyan; font-weight: bold">... </span>                  'print_usyms(ubacktrace()) '      # print backtrace
+<span style="color: darkcyan; font-weight: bold">... </span>                  'println("Bye, SystemTap!") '
+<span style="color: darkcyan; font-weight: bold">... </span>                  'exit()'
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span>         )]
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>stap = jfapi.stap(flowd, probes=probes)
+
+<span style="color: white; background-color: blue; font-weight: bold">=== Starting stap on "/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd"</span>
+<span style="color: darkcyan; font-weight: bold">Starting interactive-process stap: sudo stap -v -x 196316 -e 'probe process("/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd").function("show_version"){printf("Hello World, from SystemTap!\n") println($$vars$) print_usyms(ubacktrace()) println("Bye, SystemTap!") exit()} '
+</span><span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>with stap:
+<span style="color: darkcyan; font-weight: bold">... </span>    flowd.vty('show ver')
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkmagenta; font-weight: bold">Pass 1: parsed user script and 96 library script(s) using 191972virt/25572res/2224shr/24056data kb, in 140usr/10sys/323real ms.
+</span><span style="color: darkmagenta; font-weight: bold">Pass 2: analyzed script: 1 probe(s), 51 function(s), 2 embed(s), 0 global(s) using 291156virt/86940res/34572shr/53052data kb, in 440usr/20sys/945real ms.
+</span><span style="color: darkmagenta; font-weight: bold">Pass 3: using cached /root/.systemtap/cache/46/stap_46f1e50303fc4ff5ebe37155e7550756_42461.c
+Pass 4: using cached /root/.systemtap/cache/46/stap_46f1e50303fc4ff5ebe37155e7550756_42461.ko
+</span><span style="color: darkmagenta; font-weight: bold">Pass 5: starting run.
+</span><span style="color: olive; font-weight: bold">previous remaining stdout output: "[Tue Apr  1 22:11:42 2014 LOG: Err] [cosfpc_ifd_get_effective_bandwidth] Insufficient context
+[Tue Apr  1 22:11:42 2014 LOG: Err] [cosfpc_ifd_get_effective_bandwidth] Insufficient context
+[Tue Apr  1 22:11:43 2014 LOG: Err] [cosfpc_ifd_get_effective_bandwidth] Insufficient context
+[Tue Apr  1 22:11:43 2014 LOG: Err] [cosfpc_update_scheduler_mode] Insufficient context
+[Tue Apr  1 22:11:43 2014 LOG: Err] [cosfpc_update_scheduler_mode] Insufficient context
+"</span><span style="color: darkcyan; font-weight: bold">show ver
+</span><span style="color: olive; font-weight: bold">show ver
+</span><span style="color: olive; font-weight: bold">====== NGSRX System ======
+
+LINUX platform (</span><span style="color: olive; font-weight: bold">x86 processor, 2048MB memory, 16384KB flash)
+Current time   : Tue Apr  1 22:11:46 2014
+
+</span><span style="color: olive; font-weight: bold">Elapsed time   :      0+00:00:13
+</span><span style="color: olive; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">[flowd-linux64](vre vty)# </span><span style="color: olive; font-weight: bold">
+</span>('show ver\n====== NGSRX System ======\n\nLINUX platform (x86 processor, 2048MB memory, 16384KB flash)\nCurrent time   : Tue Apr  1 22:11:46 2014\n\nElapsed time   :      0+00:00:13\n\n[flowd-linux64](vre vty)# ', '')
+Hello World, from SystemTap!
+config=ERROR result=ERROR magic_number=0 buffer="�k�" mstime=44033669420 tv={.tv_sec=0, .tv_usec=236913632927}
+ 0xa268d0 : show_version+0x0/0xb8 [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0x974bde : parser_sub_parse_end_of_line+0x6a/0x87 [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0x971023 : parser_parse_node+0xfe/0x105 [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0x972c6e : parser_parse_words+0x3c3/0x53a [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0x972e48 : parser_parse_string+0x63/0x6b [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0x96feaf : editor_read_and_parse+0xa9/0xd7 [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0xa26ea4 : system_console_create+0x30f/0x3bc [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0xdcadfd : console_server+0x2d/0x2f [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0xdcb209 : vty_daemon+0x385/0x3e3 [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+ 0xe767a6 : thread_suicide+0x0/0x7b [/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd]
+Bye, SystemTap!
+<span style="color: darkmagenta; font-weight: bold">Pass 5: run completed in 10usr/30sys/2272real ms.
+</span><span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>o = stap.getbuf()
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>"Hello World" in o and 'editor_read_and_parse' in o  # checks the stap probe is hit and backtrace is right.
+True
+</pre></span>
+<li class=passed id="tst7l">
+
+<span id="tst7+" class="buttonpassed" onClick="show('tst7')" style="POSITION: absolute; VISIBILITY: hidden;">+007+</span>
+<span id="tst7-" class="buttonpassed" onClick="hide('tst7')">-007-</span>
+and a stronger spice, perf
+<span class="comment passed" id="tst7" ><br>
+<span class="normal">(time elapse 2.668s, execution 0.02s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE and a stronger spice, perf</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p = jfapi.Perf(flowd)               # open a Perf performance profiler object for flowd
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>ws1('ping -f %s' % ws2.dp_ip, expect=None, timeout=0.01)    # start a flood ping through flowd
+<span style="color: darkcyan; font-weight: bold">ping -f 2.2.2.2
+</span>ping -f 2.2.2.2
+PING 2.2.2.2 (2.2.2.2) 56(84) bytes of data.
+. . . . . . .
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p.stat(duration=1)                  # profile cpu statistic for 1 second
+
+<span style="color: white; background-color: blue; font-weight: bold">=== Starting "sudo perf stat -p 196316 -a"</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p.record(duration=1)                # record flowd perf sampling for 1 second
+
+<span style="color: white; background-color: blue; font-weight: bold">=== Starting "sudo perf record -p 196316 -o /tmp/perf.data -q -g"</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>o, e = ws1.ctrl_c()                 # stop the flood ping
+<span style="color: darkcyan; font-weight: bold">Send Ctrl-C SIGINT to WS1-ngsrx-build18.
+</span>previous remaining stdout output: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." . .^C
+--- 2.2.2.2 ping statistics ---
+2275 packets transmitted, 2274 received, 0% packet loss, time 2643ms
+rtt min/avg/max/mdev = 0.725/1.144/4.731/0.259 ms, ipg/ewma 1.162/1.180 ms
+]0;root@WS1-ngsrx-build18:/[root@WS1-ngsrx-build18 /]#
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p.show(graph=True, threshold=1)     # show perf report, for functions &gt; 1% usage, with call graph
+# ========
+# captured on: Tue Apr  1 22:11:48 2014
+# hostname : ngsrx-build07.juniper.net
+# os release : 2.6.32-042stab084.17
+# perf version : 2.6.32-358.23.2.el6.x86_64.debug
+# arch : x86_64
+# nrcpus online : 4
+# nrcpus avail : 4
+# cpudesc : Intel(R) Xeon(R) CPU E5-2690 0 @ 2.90GHz
+# cpuid : GenuineIntel,6,45,7
+# total memory : 3912032 kB
+# cmdline : /usr/bin/perf record -p 196316 -o /tmp/perf.data -q -g
+# event : name = cpu-clock, type = 1, config = 0x0, config1 = 0x0, config2 = 0x0, excl_usr = 0, excl_kern = 0, excl_host = 0, excl_guest = 1, precise_ip = 0, id = { 660, 661, 662, 663, 664, 665 }
+# HEADER_CPU_TOPOLOGY info available, use -I to display
+# HEADER_NUMA_TOPOLOGY info available, use -I to display
+# ========
+#
+# Samples: 3K of event 'cpu-clock'
+# Event count (approx.): 3849
+#
+# Overhead  Command         Shared Object                                          Symbol
+# ........  .......  ....................  ..............................................
+#
+<span style="color: green; font-weight: bold">    14.16%    flowd  [kernel.kallsyms]     [k] _spin_unlock_irqrestore                   </span>
+              |
+              --- _spin_unlock_irqrestore
+                 |
+                 |--93.76%-- __GI___getrusage
+                 |          |
+                 |          |--37.60%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--29.60%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--17.60%-- ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --15.20%-- cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--2.75%-- 0x372960e4ed
+                 |          |
+                 |           --100.00%-- flowd_pkt_io_tx
+                 |                     hwt_spt_func
+                 |                     start_thread
+                 |
+                 |--2.39%-- __select
+                 |          start_thread
+                 |
+                 |--0.73%-- __GI___libc_nanosleep
+                 |          hwt_dpq_flt_func
+                 |          start_thread
+                  --0.37%-- [...]
+
+<span style="color: green; font-weight: bold">     7.82%    flowd  [kernel.kallsyms]     [k] system_call_after_swapgs                  </span>
+              |
+              --- system_call_after_swapgs
+                 |
+                 |--63.46%-- __sigprocmask
+                 |
+                 |--30.90%-- __GI___getrusage
+                 |
+                 |--4.98%-- __select
+                  --0.66%-- [...]
+
+<span style="color: green; font-weight: bold">     6.21%    flowd  [kernel.kallsyms]     [k] __audit_syscall_exit                      </span>
+              |
+              --- __audit_syscall_exit
+                 |
+                 |--50.21%-- __GI___getrusage
+                 |          |
+                 |          |--35.71%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--33.33%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--15.48%-- ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --15.48%-- cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--39.75%-- __sigprocmask
+                 |          |
+                 |          |--45.95%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--41.89%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --12.16%-- sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--9.62%-- __select
+                 |          |
+                 |          |--94.44%-- cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --5.56%-- start_thread
+                  --0.42%-- [...]
+
+<span style="color: green; font-weight: bold">     4.99%    flowd  [kernel.kallsyms]     [k] sigprocmask                               </span>
+              |
+              --- sigprocmask
+                  __sigprocmask
+                 |
+                 |--38.54%-- sched_finish_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--22.40%-- sched_start_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--8.85%-- sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--0.52%-- chassis_db_get
+                 |          chassis_db_get_main_board
+                 |          mtj_rtt_dxc_supported
+                 |          rt_table_dxc_supported
+                 |          rt_table_lookup
+                 |          flow_fto_route_lookup_vrid
+                 |          make_nsp_ready_no_resolve
+                 |          flow_first_install_session
+                 |          flow_initiate_first_path
+                 |          flow_find_session
+                 |          flow_decap_vector
+                 |          flow_lookup_and_setup_lpak
+                 |          flow_process_fast_path
+                 |          flow_process_pkt
+                 |          jexec_eval_flow_v4func
+                 |          jexec_eval_nh
+                 |          jexec_run
+                 |          jexec_lookup
+                 |          ft_pktproc_loop
+                 |          ft_spu_data_handler
+                 |          flowd_flt_handler
+                 |          hwt_dpq_flt_func
+                 |          start_thread
+                  --29.69%-- [...]
+
+<span style="color: green; font-weight: bold">     3.66%    flowd  [kernel.kallsyms]     [k] audit_syscall_entry                       </span>
+              |
+              --- audit_syscall_entry
+                 |
+                 |--60.99%-- __sigprocmask
+                 |          |
+                 |          |--46.43%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--37.50%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--14.29%-- sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --1.79%-- chassis_db_get
+                 |                     chassis_db_get_main_board
+                 |                     mtj_rtt_dxc_supported
+                 |                     rt_table_dxc_supported
+                 |                     rt_table_lookup
+                 |                     flow_fto_route_lookup_vrid
+                 |                     make_nsp_ready_no_resolve
+                 |                     flow_first_install_session
+                 |                     flow_initiate_first_path
+                 |                     flow_find_session
+                 |                     flow_decap_vector
+                 |                     flow_lookup_and_setup_lpak
+                 |                     flow_process_fast_path
+                 |                     flow_process_pkt
+                 |                     jexec_eval_flow_v4func
+                 |                     jexec_eval_nh
+                 |                     jexec_run
+                 |                     jexec_lookup
+                 |                     ft_pktproc_loop
+                 |                     ft_spu_data_handler
+                 |                     flowd_flt_handler
+                 |                     hwt_dpq_flt_func
+                 |                     start_thread
+                 |
+                 |--33.33%-- __GI___getrusage
+                 |          |
+                 |          |--36.11%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--33.33%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--16.67%-- ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --13.89%-- cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                  --5.67%-- __select
+                            |
+                             --100.00%-- cpu_sched_update_timers
+                                       sched_suspend_thread
+                                       thread_yield
+                                       ft_sched_timer_handler
+                                       ft_dispatch_timer
+                                       ft_sched_start
+                                       thread_suicide
+                                       0x0
+
+<span style="color: green; font-weight: bold">     3.33%    flowd  [kernel.kallsyms]     [k] getrusage                                 </span>
+              |
+              --- getrusage
+                  __GI___getrusage
+                 |
+                 |--28.12%-- sched_finish_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--26.56%-- sched_start_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--11.72%-- ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--9.38%-- cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                  --24.22%-- [...]
+
+<span style="color: green; font-weight: bold">     3.22%    flowd  libc-2.12.so          [.] __sigprocmask                             </span>
+              |
+              --- __sigprocmask
+
+<span style="color: green; font-weight: bold">     2.52%    flowd  [kernel.kallsyms]     [k] do_select                                 </span>
+              |
+              --- do_select
+                  __select
+                 |
+                 |--81.44%-- cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--4.12%-- start_thread
+                  --14.43%-- [...]
+
+<span style="color: green; font-weight: bold">     2.39%    flowd  [kernel.kallsyms]     [k] sys_rt_sigprocmask                        </span>
+              |
+              --- sys_rt_sigprocmask
+                  __sigprocmask
+                 |
+                 |--25.00%-- sched_finish_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--23.91%-- sched_start_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--5.43%-- sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                  --45.65%-- [...]
+
+<span style="color: green; font-weight: bold">     1.92%    flowd  [kernel.kallsyms]     [k] tcp_poll                                  </span>
+              |
+              --- tcp_poll
+                  __select
+                 |
+                 |--83.78%-- cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                  --16.22%-- [...]
+
+<span style="color: green; font-weight: bold">     1.90%    flowd  [kernel.kallsyms]     [k] fget_light                                </span>
+              |
+              --- fget_light
+                  __select
+                 |
+                 |--79.45%-- cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--9.59%-- start_thread
+                  --10.96%-- [...]
+
+<span style="color: green; font-weight: bold">     1.66%    flowd  [kernel.kallsyms]     [k] current_kernel_time                       </span>
+              |
+              --- current_kernel_time
+                 |
+                 |--59.38%-- __sigprocmask
+                 |          |
+                 |          |--53.85%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--30.77%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --15.38%-- sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--34.38%-- __GI___getrusage
+                 |          |
+                 |          |--35.71%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--28.57%-- cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--28.57%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --7.14%-- ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                  --6.25%-- __select
+                            cpu_sched_update_timers
+                            sched_suspend_thread
+                            thread_yield
+                            ft_sched_timer_handler
+                            ft_dispatch_timer
+                            ft_sched_start
+                            thread_suicide
+                            0x0
+
+<span style="color: green; font-weight: bold">     1.56%    flowd  [kernel.kallsyms]     [k] jiffies_to_timeval                        </span>
+              |
+              --- jiffies_to_timeval
+                  __GI___getrusage
+                 |
+                 |--36.67%-- sched_finish_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--26.67%-- sched_start_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--15.00%-- cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--1.67%-- ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                  --20.00%-- [...]
+
+<span style="color: green; font-weight: bold">     1.53%    flowd  libc-2.12.so          [.] __GI___getrusage                          </span>
+              |
+              --- __GI___getrusage
+
+<span style="color: green; font-weight: bold">     1.51%    flowd  [kernel.kallsyms]     [k] copy_user_generic_unrolled                </span>
+              |
+              --- copy_user_generic_unrolled
+                 |
+                 |--50.00%-- __GI___getrusage
+                 |          |
+                 |          |--40.00%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          |
+                 |          |          |--90.00%-- thread_yield
+                 |          |          |          ft_sched_timer_handler
+                 |          |          |          ft_dispatch_timer
+                 |          |          |          ft_sched_start
+                 |          |          |          thread_suicide
+                 |          |          |          0x0
+                 |          |          |
+                 |          |           --10.00%-- thread_sleep
+                 |          |                     wakeup_trigger_wait
+                 |          |                     socket_event_test_wait
+                 |          |                     socket_receive_wait
+                 |          |                     vty_socket_input
+                 |          |                     vty_getchar
+                 |          |                     vty_console_read
+                 |          |                     ukern_read
+                 |          |                     _IO_file_underflow@@GLIBC_2.2.5
+                 |          |                     0x7f4d7c422000
+                 |          |
+                 |          |--24.00%-- ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--24.00%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --12.00%-- cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--29.31%-- __sigprocmask
+                 |          |
+                 |          |--53.85%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --46.15%-- sched_finish_run_timer
+                 |                     cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--18.97%-- __select
+                 |          |
+                 |          |--80.00%-- cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --20.00%-- start_thread
+                 |
+                  --1.72%-- 0x372960e54d
+                            flowd_pkt_io_rx
+                            hwt_spt_func
+                            start_thread
+
+<span style="color: green; font-weight: bold">     1.33%    flowd  [kernel.kallsyms]     [k] get_task_mm                               </span>
+              |
+              --- get_task_mm
+                  __GI___getrusage
+                 |
+                 |--31.37%-- sched_finish_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--27.45%-- sched_start_run_timer
+                 |          cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--13.73%-- cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--5.88%-- ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                  --21.57%-- [...]
+
+<span style="color: green; font-weight: bold">     1.27%    flowd  [kernel.kallsyms]     [k] kfree                                     </span>
+              |
+              --- kfree
+                 |
+                 |--63.27%-- __sigprocmask
+                 |          |
+                 |          |--40.00%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--40.00%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --20.00%-- sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--28.57%-- __GI___getrusage
+                 |          |
+                 |          |--55.56%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--22.22%-- ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--11.11%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --11.11%-- cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--6.12%-- __select
+                 |          |
+                 |           --100.00%-- cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                  --2.04%-- 0x372960e4ed
+                            flowd_pkt_io_tx
+                            hwt_spt_func
+                            start_thread
+
+<span style="color: green; font-weight: bold">     1.27%    flowd  [kernel.kallsyms]     [k] fput                                      </span>
+              |
+              --- fput
+                  __select
+                 |
+                 |--67.35%-- cpu_sched_update_timers
+                 |          sched_suspend_thread
+                 |          thread_yield
+                 |          ft_sched_timer_handler
+                 |          ft_dispatch_timer
+                 |          ft_sched_start
+                 |          thread_suicide
+                 |          0x0
+                 |
+                 |--8.16%-- start_thread
+                  --24.49%-- [...]
+
+<span style="color: green; font-weight: bold">     1.25%    flowd  flowd                 [.] event_wait                                </span>
+              |
+              --- event_wait
+
+<span style="color: green; font-weight: bold">     1.22%    flowd  [kernel.kallsyms]     [k] sysret_signal                             </span>
+              |
+              --- sysret_signal
+                 |
+                 |--65.96%-- __sigprocmask
+                 |
+                 |--23.40%-- __GI___getrusage
+                 |
+                 |--8.51%-- __select
+                 |
+                  --2.13%-- 0x372960e4ed
+
+<span style="color: green; font-weight: bold">     1.12%    flowd  [kernel.kallsyms]     [k] unroll_tree_refs                          </span>
+              |
+              --- unroll_tree_refs
+                 |
+                 |--67.44%-- __sigprocmask
+                 |          |
+                 |          |--45.83%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |          |--37.50%-- sched_finish_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --16.67%-- sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                 |--30.23%-- __GI___getrusage
+                 |          |
+                 |          |--62.50%-- sched_start_run_timer
+                 |          |          cpu_sched_update_timers
+                 |          |          sched_suspend_thread
+                 |          |          thread_yield
+                 |          |          ft_sched_timer_handler
+                 |          |          ft_dispatch_timer
+                 |          |          ft_sched_start
+                 |          |          thread_suicide
+                 |          |          0x0
+                 |          |
+                 |           --37.50%-- sched_finish_run_timer
+                 |                     cpu_sched_update_timers
+                 |                     sched_suspend_thread
+                 |                     thread_yield
+                 |                     ft_sched_timer_handler
+                 |                     ft_dispatch_timer
+                 |                     ft_sched_start
+                 |                     thread_suicide
+                 |                     0x0
+                 |
+                  --2.33%-- __select
+                            cpu_sched_update_timers
+                            sched_suspend_thread
+                            thread_yield
+                            ft_sched_timer_handler
+                            ft_dispatch_timer
+                            ft_sched_start
+                            thread_suicide
+                            0x0
+
+<span style="color: green; font-weight: bold">To interactively check the perf report, run "sudo perf report -i /tmp/perf.data" from DevVM shell.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>' 100% packet loss' not in o        # for flood ping, some packet might drop, but not all
+True
+</pre></span>
+<li class=failed id="tst8l">
+
+<span id="tst8+" class="buttonfailed" onClick="show('tst8')" style="POSITION: absolute; VISIBILITY: hidden;">+008+</span>
+<span id="tst8-" class="buttonfailed" onClick="hide('tst8')">-008-</span>
+now, a weirdo spice, DIY
+<span class="comment failed" id="tst8" ><br>assist human manual steps and help to create new test case.
+<span class="normal">(time elapse 45.830s, execution 0.07s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE now, a weirdo spice, DIY</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: assist human manual steps and help to create new test case.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>util.print_red("Mmm, how do I test flowd online, let me try manually...")
+<span style="color: red; font-weight: bold">Mmm, how do I test flowd online, let me try manually...</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>k = util.pause_for_a_key('Manual test? Press Y or N')
+<span style="color: green; font-weight: bold">                                                                                                                              Manual test? Press Y or N...</span><span style="color: green; font-weight: bold">                                                                                                                              </span><span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>if k in ['y', 'Y']:
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e, r0 = vre.console(rtn_cmdbuf=True)
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e, r1 = flowd.console(rtn_cmdbuf=True)
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e, r2 = devvm.console(rtn_cmdbuf=True)    # if I congest the ctrl path, will it still online?
+<span style="color: darkcyan; font-weight: bold">... </span>    o, e, r3 = gdbflowd.console(rtn_cmdbuf=True) # if I stop flowd, will it still online?
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_red("Here is a list of the manual steps done in the interactive consoles. Please create a test case with it.")
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('VRE commands: %s' % r0)
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('FlowD commands: %s' % r1)
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('DevVM commands: %s' % r2)
+<span style="color: darkcyan; font-weight: bold">... </span>    util.print_green('GDB-FlowD commands: %s' % r3)
+<span style="color: darkcyan; font-weight: bold">... </span>
+
+<span style="color: white; background-color: blue; font-weight: bold">=== Console attached to 'vre'. Escape character is '^]'</span>
+<span style="color: darkcyan; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">
+
+</span><span style="color: blue; font-weight: bold">regress@vre&gt; </span><span style="color: blue; font-weight: bold">show</span><span style="color: blue; font-weight: bold"> chassis</span><span style="color: blue; font-weight: bold"> f</span><span style="color: blue; font-weight: bold">pc</span><span style="color: blue; font-weight: bold"> pic-status</span><span style="color: blue; font-weight: bold"> </span><span style="color: blue; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">Slot 0   Online       Virtual FPC
+</span><span style="color: blue; font-weight: bold">  PIC 0  Online       Virtual GE
+</span><span style="color: blue; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">regress@vre&gt; </span><span style="color: blue; font-weight: bold">s</span><span style="color: blue; font-weight: bold">h</span><span style="color: blue; font-weight: bold">o</span><span style="color: blue; font-weight: bold">w</span><span style="color: blue; font-weight: bold"> </span><span style="color: blue; font-weight: bold">p</span><span style="color: blue; font-weight: bold">f</span><span style="color: blue; font-weight: bold">e</span><span style="color: blue; font-weight: bold"> </span><span style="color: blue; font-weight: bold">t</span><span style="color: blue; font-weight: bold">e</span><span style="color: blue; font-weight: bold">r</span><span style="color: blue; font-weight: bold">s</span><span style="color: blue; font-weight: bold">e</span><span style="color: blue; font-weight: bold"> </span><span style="color: blue; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">Slot Type Slot      State     Uptime
+     FWDD Present   Online    00:00:26
+</span><span style="color: blue; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">regress@vre&gt; </span>
+<span style="color: white; background-color: blue; font-weight: bold">=== Console detached from "vre", by Ctrl-]</span>
+<span style="color: green; font-weight: bold">Here are the manual steps done in interactive console of vre:</span>
+<span style="color: green; font-weight: bold">    'show chassis fpc pic-status'</span>
+<span style="color: green; font-weight: bold">    'show pfe terse'</span>
+
+
+<span style="color: white; background-color: blue; font-weight: bold">=== Console attached to 'flowd'. Escape character is '^]'</span>
+<span style="color: darkcyan; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">[flowd-linux64](vre vty)# </span><span style="color: olive; font-weight: bold">s</span><span style="color: olive; font-weight: bold">h</span><span style="color: olive; font-weight: bold">o</span><span style="color: olive; font-weight: bold">w</span><span style="color: olive; font-weight: bold"> </span><span style="color: olive; font-weight: bold">c</span><span style="color: olive; font-weight: bold">h</span><span style="color: olive; font-weight: bold">a</span><span style="color: olive; font-weight: bold">s</span><span style="color: olive; font-weight: bold">s</span><span style="color: olive; font-weight: bold">i</span><span style="color: olive; font-weight: bold">s</span><span style="color: olive; font-weight: bold"> </span><span style="color: olive; font-weight: bold">c</span><span style="color: olive; font-weight: bold">o</span><span style="color: olive; font-weight: bold">m</span><span style="color: olive; font-weight: bold">m</span><span style="color: olive; font-weight: bold">a</span><span style="color: olive; font-weight: bold">n</span><span style="color: olive; font-weight: bold">d</span><span style="color: olive; font-weight: bold">s</span><span style="color: olive; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">Opcode  Received    Sent     Errors   Flags  Description
+</span><span style="color: olive; font-weight: bold">------  --------  --------  --------  -----  -----------
+  132          1         0         0   0     FPC Online
+</span><span style="color: olive; font-weight: bold">  133          0         1         0   0     FPC Online ack
+</span><span style="color: olive; font-weight: bold">  144          0         0         0   0     PIC Online command
+</span><span style="color: olive; font-weight: bold">  145          0         0         0   0     PIC Offline command
+</span><span style="color: olive; font-weight: bold">  146          0         1         0   0     PIC Online request
+</span><span style="color: olive; font-weight: bold">  147          0         0         0   0     PIC Offline request
+</span><span style="color: olive; font-weight: bold">  148          1         0         0   0     PIC Online ack
+</span><span style="color: olive; font-weight: bold">  149          0         0         0   0     PIC Offline ack
+</span><span style="color: olive; font-weight: bold">  150          0         1         0   0     PIC Attach
+</span><span style="color: olive; font-weight: bold">  151          0         0         0   0     PIC Detach
+</span><span style="color: olive; font-weight: bold">  158          0         0         0   0     PIC port info
+</span><span style="color: olive; font-weight: bold">  159          0         0         0   0     FPC power cycle
+</span><span style="color: olive; font-weight: bold">  210         11         0         0   0     Set Boolean
+</span><span style="color: olive; font-weight: bold">  211          0         0         0   0     CM get boolean
+</span><span style="color: olive; font-weight: bold">  212          0         3         0   0     PIC Status
+</span><span style="color: olive; font-weight: bold">  215          0         0         0   0     PIC Bounce
+</span><span style="color: olive; font-weight: bold">  258          4         0         0   0     Set Integer
+</span><span style="color: olive; font-weight: bold">  259          0         0         0   0     CM get integer
+</span><span style="color: olive; font-weight: bold">  262          0         3         0   0     FWDD status
+</span><span style="color: olive; font-weight: bold">  263          0         1         0   0     FWDD ready
+</span><span style="color: olive; font-weight: bold">  264          0         0         0   0     Firmware Upgrade cmd
+</span><span style="color: olive; font-weight: bold">  265          0         0         0   0     Firmware status
+</span><span style="color: olive; font-weight: bold">  266          1         0         0   0     FWDD online
+</span><span style="color: olive; font-weight: bold">  267          1         0         0   0     FWDD PIC attach
+</span><span style="color: olive; font-weight: bold">  268          0         1         0   0     FWDD PIC attach ack
+</span><span style="color: olive; font-weight: bold">  269          0         0         0   0     FWDD PIC detach
+</span><span style="color: olive; font-weight: bold">  331          0         1         0   0     FWDD FPC ready
+</span><span style="color: olive; font-weight: bold">  332          1         0         0   0     FWDD FPC Action
+</span><span style="color: olive; font-weight: bold">  333          0         0         0   0     FWDD FPC RESET REQUEST
+</span><span style="color: olive; font-weight: bold">  339          0         0         0   0     FWDD PS STATUS
+</span><span style="color: olive; font-weight: bold">  612          0         0         0   0     WWAN Modem Status
+</span><span style="color: olive; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">[flowd-linux64](vre vty)# </span><span style="color: olive; font-weight: bold">show pfe manager statistics
+</span><span style="color: olive; font-weight: bold">PFE Manager Status:
+ PFEMAN reconnect enabled
+</span><span style="color: olive; font-weight: bold"> Running without FPCs
+</span><span style="color: olive; font-weight: bold">PFE Manager Error stats:
+</span><span style="color: olive; font-weight: bold"> Message write failures             : 0
+</span><span style="color: olive; font-weight: bold"> Pipe write failures                : 0
+</span><span style="color: olive; font-weight: bold"> Pipe queue overflows               : 0
+</span><span style="color: olive; font-weight: bold">
+PFE Manager Messages</span><span style="color: olive; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">Type             Messages
+</span><span style="color: olive; font-weight: bold">-------------  ----------
+</span><span style="color: olive; font-weight: bold">    interface         256
+</span><span style="color: olive; font-weight: bold">         nhdb          70
+</span><span style="color: olive; font-weight: bold">        route          82
+</span><span style="color: olive; font-weight: bold">          pfe         379
+</span><span style="color: olive; font-weight: bold">          dfw          25
+</span><span style="color: olive; font-weight: bold">      sampler           0
+</span><span style="color: olive; font-weight: bold">          cos           0
+</span><span style="color: olive; font-weight: bold">      Monitor           0
+</span><span style="color: olive; font-weight: bold">      asp cfg           0
+</span><span style="color: olive; font-weight: bold">       gencfg          40
+</span><span style="color: olive; font-weight: bold"> async opaque           0
+</span><span style="color: olive; font-weight: bold">     sysstats           0
+</span><span style="color: olive; font-weight: bold">Total Messages        852
+</span><span style="color: olive; font-weight: bold">
+
+Probes_pfe == Enabled
+</span><span style="color: olive; font-weight: bold">
+PFE Performance Monitor</span><span style="color: olive; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">Type                                                  Number      TotTime      AvTime(us)  HiTime(us) LoTime(us)
+</span><span style="color: olive; font-weight: bold">--------------------------------------------------    ----------  -----------  ----------  ---------- ----------
+</span><span style="color: olive; font-weight: bold">pfeman_session_manager                                       852      55341us          64        1103          1
+</span><span style="color: olive; font-weight: bold">pfeman_session_manager_msg_non_session                       163      36131us         221        1101          6
+</span><span style="color: olive; font-weight: bold">msg_non_session_IPC_MSG_TYPE_NHDB                             70       2476us          35         109          6
+</span><span style="color: olive; font-weight: bold">msg_non_session_IPC_MSG_TYPE_ROUTE                            65      32669us         502        1101          8
+</span><span style="color: olive; font-weight: bold">msg_non_session_IPC_MSG_TYPE_others                           28        940us          33         244          6
+</span><span style="color: olive; font-weight: bold">pfeman_session_msg_handler                                   358      18775us          52        1103          1
+</span><span style="color: olive; font-weight: bold">pfeman_session_end                                           179      18606us         103        1103          1
+</span><span style="color: olive; font-weight: bold">pfeman_session_end_do                                        331      18484us          55        1103          1
+</span><span style="color: olive; font-weight: bold">msg_out_session_IPC_MSG_TYPE_IF                              256      11236us          43         822          1
+</span><span style="color: olive; font-weight: bold">msg_out_session_IPC_MSG_TYPE_ROUTE                            17       2072us         121         274          1
+</span><span style="color: olive; font-weight: bold">msg_out_session_IPC_MSG_TYPE_DFW                              17        578us          34          98          5
+</span><span style="color: olive; font-weight: bold">msg_out_session_IPC_MSG_TYPE_GENCFG_COS                       13        369us          28          93          5
+</span><span style="color: olive; font-weight: bold">msg_out_session_IPC_MSG_TYPE_others                            1          9us           9           9          9
+</span><span style="color: olive; font-weight: bold">pfeman_session_end_IC                                        179         10s        60336     7643885          2
+</span><span style="color: olive; font-weight: bold">msg_out_session_IPC_MSG_TYPE_IF_IC                           256         10s        42188     7646299          1
+</span><span style="color: olive; font-weight: bold">msg_out_session_IPC_MSG_TYPE_GENCFG_COS_IC                    13          8s       681466     7881134       1638
+</span><span style="color: olive; font-weight: bold">pfeman_session_peer_ack_IC                                    18         10s       575465     7603673     115881
+</span><span style="color: olive; font-weight: bold">pfeman_active_to_resync_sent                                   1  1396415492s   1396415492628757  1396415492628757  1396415492628757
+</span><span style="color: olive; font-weight: bold">pfeman_resync_sent_to_complete                                 1     546253us      546253      546253     546253
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_3                                 24       4130us         172         821         50
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_10                                 5        137us          27          57          6
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_11                                 7        177us          25          48          5
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_12                                22        307us          13          42          1
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_13                                14        519us          37          83          2
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_15                                 2         19us           9          11          8
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_23                                12        509us          42          94         10
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_29                                 6       2409us         401         657        143
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_33                                16        224us          14          63          2
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_34                                16        197us          12          43          6
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_35                                15       1052us          70         224         19
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_37                                 1         68us          68          68         68
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_54                                 4        139us          34          45         21
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_55                                24        644us          26          81          0
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_57                                 2         64us          32          39         25
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_58                                 1          7us           7           7          7
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_97                                 1          8us           8           8          8
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_133                               25         44us           1          11          2
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_163                                4         14us           3           7          2
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_201                               16        106us           6          16          3
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_226                                6         25us           4           7          2
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_229                                4         17us           4           5          3
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_IF_subtype_241                               29         14us           0           1          1
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_NHDB_subtype_1                               58       2135us          36         108         13
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_NHDB_subtype_3                                3         55us          18          23         12
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_NHDB_subtype_23                               9        208us          23          43          6
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_ROUTE_subtype_1                              59      30987us         525        1100          8
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_ROUTE_subtype_2                               4       1055us         263         496        103
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_ROUTE_subtype_3                               2        549us         274         395        154
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_ROUTE_subtype_6                               1          7us           7           7          7
+</span><span style="color: olive; font-weight: bold">msg_IPC_MSG_TYPE_ROUTE_subtype_9                              16       2041us         127         272          1
+</span><span style="color: olive; font-weight: bold">msg_TYPE_GENCFG_COS_ADD_subtype_4                              1         22us          22          22         22
+</span><span style="color: olive; font-weight: bold">msg_TYPE_GENCFG_COS_ADD_subtype_5                              3         46us          15          24         10
+</span><span style="color: olive; font-weight: bold">msg_TYPE_GENCFG_COS_ADD_subtype_6                              2         90us          45          74         16
+</span><span style="color: olive; font-weight: bold">msg_TYPE_GENCFG_COS_ADD_subtype_8                              5          2us           0           1          1
+</span><span style="color: olive; font-weight: bold">msg_TYPE_GENCFG_COS_ADD_subtype_9                              1         29us          29          29         29
+</span><span style="color: olive; font-weight: bold">msg_TYPE_GENCFG_COS_ADD_subtype_28                             1          4us           4           4          4
+</span><span style="color: olive; font-weight: bold">
+</span><span style="color: olive; font-weight: bold">[flowd-linux64](vre vty)# </span>
+<span style="color: white; background-color: blue; font-weight: bold">=== Console detached from "flowd", by Ctrl-]</span>
+<span style="color: green; font-weight: bold">Here are the manual steps done in interactive console of flowd:</span>
+<span style="color: green; font-weight: bold">    'show chassis commands'</span>
+<span style="color: green; font-weight: bold">    'show pfe manager statistics'</span>
+
+
+<span style="color: white; background-color: blue; font-weight: bold">=== Console attached to 'bash@ngsrx-build07'. Escape character is '^]'</span>
+<span style="color: darkcyan; font-weight: bold">
+</span><span style="color: darkmagenta; font-weight: bold">
+root@ngsrx-build07 /volume/junosv-storage02/dmu/ngb/build/jellyfish&gt; </span><span style="color: darkmagenta; font-weight: bold">i</span><span style="color: darkmagenta; font-weight: bold">f</span><span style="color: darkmagenta; font-weight: bold">c</span><span style="color: darkmagenta; font-weight: bold">o</span><span style="color: darkmagenta; font-weight: bold">n</span><span style="color: darkmagenta; font-weight: bold">f</span><span style="color: darkmagenta; font-weight: bold">i</span><span style="color: darkmagenta; font-weight: bold">g</span><span style="color: darkmagenta; font-weight: bold">
+</span><span style="color: darkmagenta; font-weight: bold">CNTL-SW   Link encap:Ethernet  HWaddr 00:1B:21:47:3A:BD
+          inet addr:128.0.0.2  Bcast:128.0.0.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1766931 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1673578 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:363087476 (346.2 MiB)  TX bytes:147144647 (140.3 MiB)
+
+DP-SW-1   Link encap:Ethernet  HWaddr 00:18:51:52:68:9C
+          inet6 addr: fe80::e087:99ff:fe94:7c54/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:73 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:30666 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:2164 (2.1 KiB)  TX bytes:1656164 (1.5 MiB)
+
+DP-SW-2   Link encap:Ethernet  HWaddr 00:18:51:CD:1F:4E
+          inet6 addr: fe80::c025:3aff:fe07:a3b5/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:86414 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:222763200 (212.4 MiB)  TX bytes:578 (578.0 b)
+
+DP-SW-3   Link encap:Ethernet  HWaddr 8A:25:5D:4F:7C:8E
+          inet6 addr: fe80::8825:5dff:fe4f:7c8e/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 b)  TX bytes:578 (578.0 b)
+
+MGT-SW    Link encap:Ethernet  HWaddr 0E:5B:FA:3A:81:31
+          inet6 addr: fe80::c5b:faff:fe3a:8131/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 b)  TX bytes:578 (578.0 b)
+
+ceth1     Link encap:Ethernet  HWaddr 00:18:51:52:68:9C
+          inet6 addr: fe80::218:51ff:fe52:689c/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:159204 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:156135 errors:0 dropped:30662 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:147675552 (140.8 MiB)  TX bytes:145923676 (139.1 MiB)
+
+ceth2     Link encap:Ethernet  HWaddr 00:18:51:CD:1F:4E
+          inet6 addr: fe80::218:51ff:fecd:1f4e/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:137103 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:152371 errors:0 dropped:4 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:144324596 (137.6 MiB)  TX bytes:144935276 (138.2 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 00:50:56:94:02:AF
+          inet addr:10.150.16.133  Bcast:10.150.23.255  Mask:255.255.248.0
+          inet6 addr: fe80::250:56ff:fe94:2af/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:21563544 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:21335411 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:6803934132 (6.3 GiB)  TX bytes:22769582955 (21.2 GiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1546965 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1546965 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:135751357 (129.4 MiB)  TX bytes:135751357 (129.4 MiB)
+
+teth0     Link encap:Ethernet  HWaddr 9A:B4:72:A0:E9:29
+          inet6 addr: fe80::98b4:72ff:fea0:e929/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:156132 errors:0 dropped:0 overruns:0 frame:0
+          TX packe</span><span style="color: darkmagenta; font-weight: bold">ts:188255 errors:0 dropped:1556 overruns:0 carrier:0
+          collisions:0 txqueuelen:500
+          RX bytes:148109336 (141.2 MiB)  TX bytes:150106854 (143.1 MiB)
+
+teth1     Link encap:Ethernet  HWaddr CE:98:D4:66:A6:23
+          inet6 addr: fe80::cc98:d4ff:fe66:a623/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:152369 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:137091 errors:0 dropped:7 overruns:0 carrier:0
+          collisions:0 txqueuelen:500
+          RX bytes:147068330 (140.2 MiB)  TX bytes:146243318 (139.4 MiB)
+
+venet0    Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet6 addr: fe80::1/128 Scope:Link
+          UP BROADCAST POINTOPOINT RUNNING NOARP  MTU:1500  Metric:1
+          RX packets:5803 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5794 errors:0 dropped:3 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:382998 (374.0 KiB)  TX bytes:813999 (794.9 KiB)
+
+vnet0     Link encap:Ethernet  HWaddr FE:54:00:04:BB:E7
+          inet6 addr: fe80::fc54:ff:fe04:bbe7/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1178 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:538543 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500
+          RX bytes:239134 (233.5 KiB)  TX bytes:28191631 (26.8 MiB)
+
+vnet1     Link encap:Ethernet  HWaddr FE:54:00:BB:A7:71
+          inet6 addr: fe80::fc54:ff:febb:a771/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1765753 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2210446 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500
+          RX bytes:387585376 (369.6 MiB)  TX bytes:175239817 (167.1 MiB)
+
+</span><span style="color: darkmagenta; font-weight: bold">root@ngsrx-build07 /volume/junosv-storage02/dmu/ngb/build/jellyfish&gt; </span>
+<span style="color: white; background-color: blue; font-weight: bold">=== Console detached from "bash@ngsrx-build07", by Ctrl-]</span>
+<span style="color: green; font-weight: bold">Here are the manual steps done in interactive console of bash@ngsrx-build07:</span>
+<span style="color: green; font-weight: bold">    'ifconfig'</span>
+
+<span style="color: darkcyan; font-weight: bold">file /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd
+</span>file /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd
+Load new symbol table from "/volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd"? (y or n) [answered Y; input not from terminal]
+Reading symbols from /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd...done.
+(gdb) <span style="color: green; font-weight: bold">GDB attached to /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 196316</span>
+(gdb)
+<span style="color: white; background-color: blue; font-weight: bold">=== Console attached to 'gdb /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd 195639'. Escape character is '^]'</span>
+<span style="color: darkcyan; font-weight: bold">bt
+</span>bt
+#0  0x00000037292e0487 in getrusage () from /lib64/libc.so.6
+#1  0x0000000000416bac in cpu_get_ms_runtime () at flowd_time.c:65
+#2  0x0000000000e73c47 in sched_finish_run_timer () at sched.c:551
+#3  0x0000000000414142 in cpu_sched_update_timers () at flowd_sched.c:97
+#4  0x0000000000e74b36 in sched_suspend_thread (state=THREAD_STATE_YIELD) at sched.c:1424
+#5  0x0000000000e76482 in thread_yield () at thread.c:553
+#6  0x0000000000eaa03d in ft_sched_timer_handler () at ../../../pmm/ft/sched/platform/ft_dpq_handler_platform.c:835
+#7  0x0000000000ea8311 in ft_dispatch_timer () at ft_sched_periodic.c:429
+#8  0x0000000000ea5cf0 in ft_sched_start () at ft_sched_dispatch.c:94
+#9  0x0000000000e767a6 in thread_wake (thread=0x3967cab0) at thread.c:689
+#10 0x0000000000000000 in ?? ()
+(gdb) info program
+	Using the running image of attached Thread 0x7f4d7c403800 (LWP 196316).
+Program stopped at 0x37292e0487.
+(gdb) info reg
+rax            0x0	0x0
+rbx            0x0	0x0
+rcx            0xffffffffffffffff	0xffffffffffffffff
+rdx            0x0	0x0
+rsi            0x3967c880	0x3967c880
+rdi            0x0	0x0
+rbp            0x3967c920	0x3967c920
+rsp            0x3967c878	0x3967c878
+r8             0x897f4b	0x897f4b
+r9             0x101010101010101	0x101010101010101
+r10            0x8	0x8
+r11            0x3202	0x3202
+r12            0x0	0x0
+r13            0x0	0x0
+r14            0x0	0x0
+r15            0x0	0x0
+rip            0x37292e0487	0x37292e0487 &lt;getrusage+7&gt;
+eflags         0x3202	[ IF #12 #13 ]
+cs             0x33	0x33
+ss             0x2b	0x2b
+ds             0x0	0x0
+es             0x0	0x0
+fs             0x0	0x0
+gs             0x0	0x0
+(gdb)
+<span style="color: white; background-color: blue; font-weight: bold">=== Console detached from "gdb /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd 195639", by Ctrl-]</span>
+<span style="color: green; font-weight: bold">Here are the manual steps done in interactive console of gdb /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd 195639:</span>
+<span style="color: green; font-weight: bold">    'info program'</span>
+<span style="color: green; font-weight: bold">    'info reg'</span>
+
+^C(gdb) ^C(gdb) <span style="color: green; font-weight: bold">GDB detached from /volume/junosv-storage02/dmu/ngb/obj_sa/bin/flowd, pid 196316</span>
+<span style="color: red; font-weight: bold">Here is a list of the manual steps done in the interactive consoles. Please create a test case with it.</span>
+<span style="color: green; font-weight: bold">VRE commands: ['show chassis fpc pic-status', 'show pfe terse']</span>
+<span style="color: green; font-weight: bold">FlowD commands: ['show chassis commands', 'show pfe manager statistics']</span>
+<span style="color: green; font-weight: bold">DevVM commands: ['ifconfig']</span>
+<span style="color: green; font-weight: bold">GDB-FlowD commands: ['info program', 'info reg']</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>False  # to mark this manual test as fail.
+False
+</pre></span>
+<li class=failed id="tst9l">
+
+<span id="tst9+" class="buttonfailed" onClick="show('tst9')" style="POSITION: absolute; VISIBILITY: hidden;">+009+</span>
+<span id="tst9-" class="buttonfailed" onClick="hide('tst9')">-009-</span>
+a procedure
+<span class="comment failed" id="tst9" ><br>run a list of commands across devices, as a procedure
+<span class="normal">(time elapse 0.953s, execution 0.02s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE a procedure</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: run a list of commands across devices, as a procedure</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>hello_world_procedure = [
+<span style="color: darkcyan; font-weight: bold">... </span>    '### A "Hello World" procedure',     # a header title to print
+<span style="color: darkcyan; font-weight: bold">... </span>    '# this is a sample procedure',      # a comment line to print
+<span style="color: darkcyan; font-weight: bold">... </span>    (vre, 'show version'),               # run a command at a device
+<span style="color: darkcyan; font-weight: bold">... </span>    (vre, dict(cmd='show version', timeout=10)),  # same, but with execution parameters
+<span style="color: darkcyan; font-weight: bold">... </span>    (vre, 'show version', 'Model: junosv-\w+'),   # same, but check result with a regex
+<span style="color: darkcyan; font-weight: bold">... </span>    'res = suscapy.sr(IP(dst="google.com")/ICMP(id=1))',# run something at jellyfish itself
+<span style="color: darkcyan; font-weight: bold">... </span>    'res[0].show()',
+<span style="color: darkcyan; font-weight: bold">... </span>    'res[0].show()',
+<span style="color: darkcyan; font-weight: bold">... </span>    (None, 'vre.shell("w")', '128.0.0.2'),        # run from jellyfish, and check result
+<span style="color: darkcyan; font-weight: bold">... </span>    'print("This procedure is executed at %s." % devvm.hostname)',  #
+<span style="color: darkcyan; font-weight: bold">... </span>    (ws1, dict(cmd='ifconfig eth0', timeout=10), 'inet addr:1.1.1.2'),
+<span style="color: darkcyan; font-weight: bold">... </span>    (devvm, dict(cmd='sudo virsh list --all', timeout=10), 'vre +shut off'), # this step will fail
+<span style="color: darkcyan; font-weight: bold">... </span>    'print("It will not reach this step, as previous step fails.")',
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span>]
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p = jfapi.Procedure(hello_world_procedure)
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>p.run(stop_on_err=True, step_by_step=False, loops=1, interval=0)
+
+
+<span style="color: white; background-color: blue; font-weight: bold">=== A "Hello World" procedure</span>
+
+<span style="color: green; font-weight: bold"># this is a sample procedure</span>
+
+<span style="color: darkcyan; font-weight: bold">show version
+</span><span style="color: blue; font-weight: bold">s</span><span style="color: blue; font-weight: bold">how</span><span style="color: blue; font-weight: bold"> version</span><span style="color: blue; font-weight: bold"> </span><span style="color: blue; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">Hostname: vre
+</span><span style="color: blue; font-weight: bold">Model: junosv-firefly
+JUNOS Software Release [12.1I20140218_2300_dmu]
+
+</span><span style="color: blue; font-weight: bold">regress@vre&gt; </span><span style="color: blue; font-weight: bold">
+</span>
+<span style="color: darkcyan; font-weight: bold">show version
+</span><span style="color: blue; font-weight: bold">show</span><span style="color: blue; font-weight: bold"> version
+</span><span style="color: blue; font-weight: bold">Hostname: vre
+Model: junosv-firefly
+</span><span style="color: blue; font-weight: bold">JUNOS Software Release [12.1I20140218_2300_dmu]
+
+</span><span style="color: blue; font-weight: bold">regress@vre&gt; </span><span style="color: blue; font-weight: bold">
+</span>
+<span style="color: darkcyan; font-weight: bold">show version
+</span><span style="color: blue; font-weight: bold">show</span><span style="color: blue; font-weight: bold"> version</span><span style="color: blue; font-weight: bold"> </span><span style="color: blue; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">Hostname: vre
+</span><span style="color: blue; font-weight: bold">Model: junosv-firefly
+JUNOS Software Release [12.1I20140218_2300_dmu]
+</span><span style="color: blue; font-weight: bold">
+</span><span style="color: blue; font-weight: bold">regress@vre&gt; </span><span style="color: blue; font-weight: bold">
+</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>res = suscapy.sr(IP(dst="google.com")/ICMP(id=1))
+
+Received 8 packets, got 1 answers, remaining 0 packets
+
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>res[0].show()
+<span style="color: blue; font-weight: bold"><span style="font-weight: bold">0000</span> IP / ICMP 10.150.16.133 &gt; 74.125.239.101 echo-request 0 ==&gt; IP / ICMP 74.125.239.101 &gt; 10.150.16.133 echo-reply 0 / Padding
+
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>res[0].show()
+<span style="color: blue; font-weight: bold"><span style="font-weight: bold">0000</span> IP / ICMP 10.150.16.133 &gt; 74.125.239.101 echo-request 0 ==&gt; IP / ICMP 74.125.239.101 &gt; 10.150.16.133 echo-reply 0 / Padding
+
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>vre.shell("w")
+<span style="color: darkcyan; font-weight: bold">w
+</span><span style="color: blue; font-weight: bold">w</span><span style="color: blue; font-weight: bold">
+
+</span><span style="color: blue; font-weight: bold"> 5:12AM  up 12 days,  9:36, 2 users, load averages: 0.79, 0.53, 0.47
+</span><span style="color: blue; font-weight: bold">USER     TTY      FROM                              LOGIN@  IDLE WHAT
+</span><span style="color: blue; font-weight: bold">root     d0       -                                Sat06PM 3days -csh (cs
+</span><span style="color: blue; font-weight: bold">regress  p0       128.0.0.2                         5:11AM     - w
+</span><span style="color: blue; font-weight: bold">root@vre% </span><span style="color: blue; font-weight: bold">
+</span>('w\n\n 5:12AM  up 12 days,  9:36, 2 users, load averages: 0.79, 0.53, 0.47\nUSER     TTY      FROM                              LOGIN@  IDLE WHAT\nroot     d0       -                                Sat06PM 3days -csh (cs\nregress  p0       128.0.0.2                         5:11AM     - w\nroot@vre% ', '')
+
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>print("This procedure is executed at %s." % devvm.hostname)
+This procedure is executed at ngsrx-build07.
+
+<span style="color: darkcyan; font-weight: bold">ifconfig eth0
+</span>ifconfig eth0
+eth0      Link encap:Ethernet  HWaddr 00:18:51:D8:20:3C
+          inet addr:1.1.1.2  Bcast:1.255.255.255  Mask:255.0.0.0
+          inet6 addr: fe80::218:51ff:fed8:203c/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:156135 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:159204 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:145923676 (139.1 MiB)  TX bytes:147675552 (140.8 MiB)
+
+]0;root@WS1-ngsrx-build18:/[root@WS1-ngsrx-build18 /]#
+
+<span style="color: darkcyan; font-weight: bold">sudo virsh list --all
+</span><span style="color: darkmagenta; font-weight: bold">sudo virsh list --all
+</span><span style="color: darkmagenta; font-weight: bold"> Id    Name                           State
+----------------------------------------------------
+ 1     vre                            running
+ -     vsrx                           shut off
+
+</span><span style="color: darkmagenta; font-weight: bold">root@ngsrx-build07 /volume/junosv-storage02/dmu/ngb/build/jellyfish&gt; </span><span style="color: darkmagenta; font-weight: bold">
+</span><span style="color: black; background-color: red; font-weight: bold">ERROR:</span> <span style="color: red; font-weight: bold">FAILED: regex "vre +shut off" not found in command output</span>
+
+<span style="color: white; background-color: blue; font-weight: bold">=== SKIPPED: "print("It will not reach this step, as previous step fails.")", as "(&lt;pyssh.local_session object at 0x2f72d90&gt;, {'cmd': 'sudo virsh list --all', 'timeout': 10}, 'vre +shut off')" has failed.</span>
+False
+</pre></span>
+<li class=passed id="tst10l">
+
+<span id="tst10+" class="buttonpassed" onClick="show('tst10')" style="POSITION: absolute; VISIBILITY: hidden;">+010+</span>
+<span id="tst10-" class="buttonpassed" onClick="hide('tst10')">-010-</span>
+and a bonus spice, internet
+<span class="comment passed" id="tst10" ><br>functions can be defined in test case, to do things of more complixity.
+<span class="normal">(time elapse 0.447s, execution 0.03s)</span>
+<pre>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#CASE and a bonus spice, internet</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span><span style="color: darkcyan; font-weight: bold">#DESCRIPT: functions can be defined in test case, to do things of more complixity.</span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>import json
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>import re
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>import urllib
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>def google_search(searchfor):
+<span style="color: darkcyan; font-weight: bold">... </span>    query = urllib.urlencode({'q': searchfor})
+<span style="color: darkcyan; font-weight: bold">... </span>    url = 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&%s' % query
+<span style="color: darkcyan; font-weight: bold">... </span>    results = urllib.urlopen(url).read()
+<span style="color: darkcyan; font-weight: bold">... </span>    results = json.loads(results)
+<span style="color: darkcyan; font-weight: bold">... </span>    data = results['responseData']
+<span style="color: darkcyan; font-weight: bold">... </span>    print('Total results: %s' % data['cursor']['estimatedResultCount'])
+<span style="color: darkcyan; font-weight: bold">... </span>    hits = data['results']
+<span style="color: darkcyan; font-weight: bold">... </span>    print('Top %d hits:' % len(hits))
+<span style="color: darkcyan; font-weight: bold">... </span>    for h in hits:
+<span style="color: darkcyan; font-weight: bold">... </span>        print('    %s\n        %s' % (re.sub('&lt;/*b&gt;', '', h['title']), h['url']))
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">... </span>    print('For more results, see %s' % data['cursor']['moreResultsUrl'])
+<span style="color: darkcyan; font-weight: bold">... </span>    return len(hits) != 0
+<span style="color: darkcyan; font-weight: bold">... </span>
+<span style="color: darkcyan; font-weight: bold">&gt;&gt;&gt; </span>google_search('Hello World')
+Total results: 315000000
+Top 4 hits:
+    Hello world program - Wikipedia, the free encyclopedia
+        http://en.wikipedia.org/wiki/Hello_world_program
+    List of Hello world program examples - Wikipedia, the free ...
+        http://en.wikipedia.org/wiki/List_of_Hello_world_program_examples
+    Lady Antebellum - Hello World - YouTube
+        http://www.youtube.com/watch%3Fv%3Dal2DFQEZl4M
+    Hello World! - GNU Project - Free Software Foundation (FSF)
+        http://www.gnu.org/fun/jokes/helloworld.html
+For more results, see http://www.google.com/search?oe=utf8&ie=utf8&source=uds&start=0&hl=en&q=Hello+World
+True
+</pre></span>
+
+</ul>
+
+</body></html>
