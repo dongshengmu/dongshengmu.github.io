@@ -1,4 +1,5 @@
 
-# Blog
+# Dongsheng Mu's blog repo.
 
-The default [wintersmith](https://github.com/jnordberg/wintersmith) template
+Dongsheng's [blog](http://dongshengmu.github.io/).
+
