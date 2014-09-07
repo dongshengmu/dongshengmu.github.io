@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dongsheng Mu</title>
+    <atom:link href="http://localhost:8080/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://localhost:8080</link>
+    <description>A system software developer in Silicon Valley, passionate about cloud security, data analysis, and automation.</description>
+    <pubDate>Fri, 01  Aug 2014 17:00:00 -0700</pubDate>
+    <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
+    <language>en</language>
+    <item>
+      <title>A DevTest framework called Jellyfish</title>
+      <link>http://localhost:8080/articles/jellyfish/</link>
+      <pubDate>Fri, 01  Aug 2014 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://localhost:8080/articles/jellyfish/</guid>
+      <author></author>
+      <description>&lt;p&gt;Jellyfish is a &lt;strong&gt;Transparent&lt;/strong&gt; and &lt;strong&gt;Flexible&lt;/strong&gt; test framework, with &lt;strong&gt;Tentacles&lt;/strong&gt; to pull things together.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I truly believe that great software should be tested with white-box methodologies. For example, a network packet can successfully pass through a network device, but without white-box testing, we can not tell whether necessary security policy was involved to check the packet, whether the packet goes through the designed data path and the designed processing, whether the packet triggered unnecessary overhead, whether the packet was maliciously manipulated or modified, whether the packet had been sniffed or copied, whether the packet belongs to an attack flow, etc. etc.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;While designing our next generation security gateway, I became passionate in building Dev Ecosystem that enables engineering efficiency. I developed a test framework orientated to enable developer to do their own test for their work, instead of traditionally manual test once then hand-over to QA hoping for the best. My daughter named it as Jellyfish. I love the name; Jellyfish is transparent, flexible, and has tentacles to pull things together. This framework provides white-box testing without the need of modifying target software source code to insert data collection points, provides developer unit-test without the need of doing separated component build or mocking the dependency. With the beauty and simplicity of Python language, it enables our C software developers to easily write their own dev-orientated white-box test cases. And, with the tentacle connections, it orchestrates test equipment and harnesses to perform sophisticated system level tests.&lt;/p&gt;
+&lt;p&gt;The framework was quickly adopted by 50+ developers for dev-testing, and was integrated into CI for rapid development and verification. There are 500+ test cases checked in, within the first 4 months of initial release. Jellyfish is designed with modern concepts. It doesn’t repeat unnecessary procedures, it is concurrent, it performs time consuming initialization only if a component is actually being first time used, and it doesn’t use any hard-coded delay in test code. Our QA team immediately recognizes the speed of Jellyfish. Not before long, they started to develop their new tests with Jellyfish and even rewrote some old Perl based test cases with Jellyfish. Quoting from a QA engineer, “… with JT (old QA framework), I would start a test suite then go for lunch. When I’m back, the test may not complete yet, or occasionally ends up with a false failure. Jellyfish does the same test suite in a few minutes and reliably.”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/jellyfish/Screen-Run.png&quot; alt=&quot;Screen-Run&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Sample execution with a few test cases selected by keywords. Notice that 2nd loop is faster than the 1st loop.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/jellyfish/Screen-report.png&quot; alt=&quot;Screen Report&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A summary of multi-loop run.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/jellyfish/Screen-CI.png&quot; alt=&quot;Screen-CI&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Integrated with Jenkins CI, with JUnit report.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/jellyfish/Screen-sample-code.png&quot; alt=&quot;Screen Code Sample&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Code sample :-)&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Field Data Analyzer</title>
+      <link>http://localhost:8080/articles/fda/</link>
+      <pubDate>Thu, 31 Jul 2014 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://localhost:8080/articles/fda/</guid>
+      <author></author>
+      <description>&lt;p&gt;Field Data Analyzer is expert system framework designed for troubleshooting, which analyses vast amount of field escalation data with a set of analytical engines, based on an extensible knowledge base.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Along with the growth of software complicity, the cost of troubleshooting explores. Why?&lt;/p&gt;
+&lt;p&gt;First, duplicated troubleshooting are involved when a same software bug repeats in different releases or at different customer sites.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Second, before a root cause is identified, different software feature teams can be involved to triage some surface symptoms down to the root cause. Due to communication delay, insufficient hand-over info, and engineering bandwidth limit, an issue may take up to months to resolve.&lt;/p&gt;
+&lt;p&gt;Third, when insufficient raw data is collected to facilitate further troubleshooting, sometimes customers are asked to provide more data, or monitor, or even to reproduce the issue.&lt;/p&gt;
+&lt;p&gt;Fourth, for a distributed system, the amount of troubleshooting data (eg. commands output and logs) can be vast, easily go beyond 100MB, and the correlation among data can be tedious and computation heavy. Seeking through them manually is unbearable and unfruitful. &lt;/p&gt;
+&lt;p&gt;Fifth, over the time, some code becomes legacy. When new use case exposes hidden issue in the area, developers are pulled out of new feature development to investigate, often this takes a knowledge refreshment or even relearn.&lt;/p&gt;
+&lt;p&gt;So on and so forth…&lt;/p&gt;
+&lt;p&gt;If we dissect this mess, the problems come from how raw data is collected, how the raw data is analyzed based on existing knowledge, and how the existing knowledge are accumulated, propagated, and updated.&lt;/p&gt;
+&lt;p&gt;FDA Field Data Analyzer is an automated tool with centralized and up-to-date knowledge, to analyze field data. &lt;/p&gt;
+&lt;p&gt;I designed this FDA tool in early 2012. Initially I just wanted a tool to liberate myself from PR triaging efforts for my team, so I could focus on new developments. Triaging is merely a process to seek though data, apply existing knowledge, to infer direction of the root cause. Soon, I realized the much bigger impact this tool can bring. With a centralized knowledge base from various teams, PR hopping and delay can be avoided. With knowledge of known issues, duplicated effort for same issue can be avoided. With one-shot data collection, bank-and-forth collecting and reproducing can be avoided. With automation, the tool can sweep through vast data and point out anomalies which can be easily overlooked by human; and it can do the tedious and time consuming computation, so that developers are liberated to focus on more innovative stuff. &lt;/p&gt;
+&lt;p&gt;So, it ended up as an troubleshooting expert system, with many features.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usage stats. Statistic of performance, scale, traffic load and pattern, resource utilization. Summary of in-use features and typical configuration.&lt;/li&gt;
+&lt;li&gt;Data analysis with engines of various regex rules. Multi-dimensional tables for aggregation, data rate, correlation. Evaluation rule plug-in for code sniplets does customized logic analysis. &lt;/li&gt;
+&lt;li&gt;Easy JSON syntax to express troubleshooting knowledge rules and smart table parsing.&lt;/li&gt;
+&lt;li&gt;Analysis of periodically collected data, for sparks, trends (such as slow leakage)&lt;/li&gt;
+&lt;li&gt;Comparison with historical data, for major changes during the time span.&lt;/li&gt;
+&lt;li&gt;Interactive mode to assist further human analysis.&lt;/li&gt;
+&lt;li&gt;Data parsing from file, and collecting from live system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The tool is well adopted by customer escalation and support teams. Besides post-failure analysis, it is proactively used for failure prevention, such as checking a initial deployment, performing regular maintenance and health monitoring, confirming network readiness for big events.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/fda/fda-overview.png&quot; alt=&quot;fda-overview&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/fda/fda-report.png&quot; alt=&quot;fda-report&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Sample report for the overview and failure details.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/fda/fda-stats.png&quot; alt=&quot;fda-stats&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Here are the tool’s performance stats for the relatively small data (10MB)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/articles/fda/fda-pdiff.png&quot; alt=&quot;fda-pdiff&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Demo of analysis of the changes in periodically collected data.&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Field Data Analyzer - Dongsheng Mu
+    </title>
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="A system software developer in Silicon Valley, passionate about cloud security, data analysis, and automation.">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Field Data Analyzer</h1>
+        <p class="author">Written by <span class="author">Dongsheng Mu</span>
+        </p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>Field Data Analyzer is expert system framework designed for troubleshooting, which analyses vast amount of field escalation data with a set of analytical engines, based on an extensible knowledge&nbsp;base.</p>
+<hr>
+<p>Along with the growth of software complicity, the cost of troubleshooting explores.&nbsp;Why?</p>
+<p>First, duplicated troubleshooting are involved when a same software bug repeats in different releases or at different customer&nbsp;sites.</p>
+<p><span class="more"></span></p>
+<p>Second, before a root cause is identified, different software feature teams can be involved to triage some surface symptoms down to the root cause. Due to communication delay, insufficient hand-over info, and engineering bandwidth limit, an issue may take up to months to&nbsp;resolve.</p>
+<p>Third, when insufficient raw data is collected to facilitate further troubleshooting, sometimes customers are asked to provide more data, or monitor, or even to reproduce the&nbsp;issue.</p>
+<p>Fourth, for a distributed system, the amount of troubleshooting data (eg. commands output and logs) can be vast, easily go beyond <span class="caps">100MB</span>, and the correlation among data can be tedious and computation heavy. Seeking through them manually is unbearable and&nbsp;unfruitful. </p>
+<p>Fifth, over the time, some code becomes legacy. When new use case exposes hidden issue in the area, developers are pulled out of new feature development to investigate, often this takes a knowledge refreshment or even&nbsp;relearn.</p>
+<p>So on and so&nbsp;forth…</p>
+<p>If we dissect this mess, the problems come from how raw data is collected, how the raw data is analyzed based on existing knowledge, and how the existing knowledge are accumulated, propagated, and&nbsp;updated.</p>
+<p><span class="caps">FDA</span> Field Data Analyzer is an automated tool with centralized and up-to-date knowledge, to analyze field&nbsp;data. </p>
+<p>I designed this <span class="caps">FDA</span> tool in early 2012. Initially I just wanted a tool to liberate myself from PR triaging efforts for my team, so I could focus on new developments. Triaging is merely a process to seek though data, apply existing knowledge, to infer direction of the root cause. Soon, I realized the much bigger impact this tool can bring. With a centralized knowledge base from various teams, PR hopping and delay can be avoided. With knowledge of known issues, duplicated effort for same issue can be avoided. With one-shot data collection, bank-and-forth collecting and reproducing can be avoided. With automation, the tool can sweep through vast data and point out anomalies which can be easily overlooked by human; and it can do the tedious and time consuming computation, so that developers are liberated to focus on more innovative&nbsp;stuff. </p>
+<p>So, it ended up as an troubleshooting expert system, with many&nbsp;features.</p>
+<ul>
+<li>Usage stats. Statistic of performance, scale, traffic load and pattern, resource utilization. Summary of in-use features and typical&nbsp;configuration.</li>
+<li>Data analysis with engines of various regex rules. Multi-dimensional tables for aggregation, data rate, correlation. Evaluation rule plug-in for code sniplets does customized logic&nbsp;analysis. </li>
+<li>Easy <span class="caps">JSON</span> syntax to express troubleshooting knowledge rules and smart table&nbsp;parsing.</li>
+<li>Analysis of periodically collected data, for sparks, trends (such as slow&nbsp;leakage)</li>
+<li>Comparison with historical data, for major changes during the time&nbsp;span.</li>
+<li>Interactive mode to assist further human&nbsp;analysis.</li>
+<li>Data parsing from file, and collecting from live&nbsp;system.</li>
+</ul>
+<p>The tool is well adopted by customer escalation and support teams. Besides post-failure analysis, it is proactively used for failure prevention, such as checking a initial deployment, performing regular maintenance and health monitoring, confirming network readiness for big&nbsp;events.</p>
+<p><img src="/articles/fda/fda-overview.png" alt="fda-overview"></p>
+<p><img src="/articles/fda/fda-report.png" alt="fda-report"></p>
+<p>Sample report for the overview and failure&nbsp;details.</p>
+<p><img src="/articles/fda/fda-stats.png" alt="fda-stats"></p>
+<p>Here are the tool’s performance stats for the relatively small data&nbsp;(<span class="caps">10MB</span>)</p>
+<p><img src="/articles/fda/fda-pdiff.png" alt="fda-pdiff"></p>
+<p>Demo of analysis of the changes in periodically collected&nbsp;data.</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">« Full blog</a></div>
+        <section class="about"><p>Contact me at <a href="https://www.linkedin.com/profile/view?id=71265165">LinkedIn</a></p>
+
+        </section>
+        <section class="copy">
+          <p>&copy; 2014 Dongsheng Mu &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
+          </p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
