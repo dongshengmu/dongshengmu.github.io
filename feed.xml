@@ -28,6 +28,7 @@
 &lt;p&gt;Integrated with Jenkins CI, with JUnit report.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/articles/jellyfish/Screen-sample-code.png&quot; alt=&quot;Screen Code Sample&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Code sample :-)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://dongshengmu.github.io/jellyfish_demo/&quot;&gt;Jellyfish demo, more than a Hello World&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     <item>
@@ -36,7 +37,7 @@
       <pubDate>Thu, 31 Jul 2014 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://localhost:8080/articles/fda/</guid>
       <author></author>
-      <description>&lt;p&gt;Field Data Analyzer is expert system framework designed for troubleshooting, which analyses vast amount of field escalation data with a set of analytical engines, based on an extensible knowledge base.&lt;/p&gt;
+      <description>&lt;p&gt;Field Data Analyzer is an expert system framework designed for troubleshooting, which analyses vast amount of field escalation data with a set of analytical engines, based on an extensible knowledge base.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Along with the growth of software complicity, the cost of troubleshooting explores. Why?&lt;/p&gt;
 &lt;p&gt;First, duplicated troubleshooting are involved when a same software bug repeats in different releases or at different customer sites.&lt;/p&gt;
